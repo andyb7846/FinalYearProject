@@ -16,10 +16,10 @@ import com.example.andy.prototype.helper.SessionManager;
 
 import java.util.HashMap;
 
-public class MenuActivity extends Activity{
+public class MenuActivity extends RootActivity{
 
-    private Button btn_menu;
-    private Button username;
+    private Button btnMenu;
+    private Button btnUsername;
 
     private SQLiteHandler db;
     private SessionManager session;
@@ -29,8 +29,8 @@ public class MenuActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
-        btn_menu = findViewById(R.id.menu);
-        username = findViewById(R.id.username);
+        btnMenu = findViewById(R.id.btn_menu);
+        btnUsername = findViewById(R.id.btn_username);
 
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
@@ -49,63 +49,10 @@ public class MenuActivity extends Activity{
         String strUsername = user.get("username");
 
         // Displaying the user details on the screen
-        username.setText(strUsername);
+        btnUsername.setText(strUsername);
 
-        username.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this,
-                        MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        //setMenuBar(btnMenu, btnUsername);
 
-        btn_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //PopupMenu popup = new PopupMenu(MenuActivity.this, btn_menu);
-                PopupMenu popup = new PopupMenu(MenuActivity.this, v);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        Intent intent = null;
-                        String title = (String)item.getTitle();
-                        switch (title){
-                            case "Accounts":
-                                intent = new Intent(MenuActivity.this, CreateCompanyActivity.class);
-                                break;
-                            case "Statistics":
-                                intent = new Intent(MenuActivity.this, CreateCompanyActivity.class);
-                                break;
-                            case "News":
-                                intent = new Intent(MenuActivity.this, CreateCompanyActivity.class);
-                                break;
-                            case "Hashtags":
-                                intent = new Intent(MenuActivity.this, CreateCompanyActivity.class);
-                                break;
-                            case "Settings":
-                                intent = new Intent(MenuActivity.this, CreateCompanyActivity.class);
-                                break;
-                            default:
-                        }
-
-                        startActivity(intent);
-                        return true;
-
-                        /*
-                        Toast.makeText(MenuActivity.this,
-                                "You Clicked : " + item.getTitle(),
-                                Toast.LENGTH_LONG
-                        ).show();
-                        */
-                    }
-                });
-
-                popup.show();
-            }
-        });
     }
 
     private void logoutUser() {

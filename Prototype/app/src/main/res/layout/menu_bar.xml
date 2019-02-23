@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <Button
-        android:id="@+id/menu"
+        android:id="@+id/btn_menu"
         android:layout_width="128dp"
         android:layout_height="54dp"
         android:layout_marginLeft="8dp"
@@ -16,11 +16,12 @@
         android:drawableLeft="@drawable/dropdown"
         android:text="Menu"
         android:textSize="30sp"
+        android:onClick="setMenuBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/username"
+        android:id="@+id/btn_username"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginEnd="8dp"
@@ -31,6 +32,7 @@
         android:text="F.Surname"
         android:textColor="@android:color/black"
         android:textSize="30sp"
+        android:onClick="setMenuBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="F.Surname" />

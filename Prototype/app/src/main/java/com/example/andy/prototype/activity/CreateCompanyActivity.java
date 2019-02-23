@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CreateCompanyActivity extends Activity{
+public class CreateCompanyActivity extends RootActivity{
 
     private static final String TAG = CreateCompanyActivity.class.getSimpleName();
 
