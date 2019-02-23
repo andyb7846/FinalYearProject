@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/one"
+        android:title="Accounts"/>
+
+    <item
+        android:id="@+id/two"
+        android:title="Statistics"/>
+
+    <item
+        android:id="@+id/three"
+        android:title="News"/>
+
+    <item
+        android:id="@+id/four"
+        android:title="Hashtags"/>
+
+    <item
+        android:id="@+id/five"
+        android:title="Settings"/>
+</menu>
