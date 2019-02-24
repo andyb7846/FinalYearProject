@@ -20,12 +20,12 @@ import java.util.UUID;
 @RestController
 public class LoginController {
 
-    private UserService UserService;
+    private UserService userService;
 
     @Autowired(required=true) //This means the program doesn't have to call this function, it's done automatically.
     @Qualifier(value="userService") //Define the name of the called function. This allows us to have more than 1.
     public void setUserService(UserService ps){
-        this.UserService = ps;
+        this.userService = ps;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST) //Defining the URL. Matches the URL Configured in AS
@@ -33,7 +33,7 @@ public class LoginController {
 
         if(username != null && password != null) {
 
-            List<User> userList = this.UserService.isExist(username);
+            List<User> userList = this.userService.isExist(username);
             if (userList == null || userList.isEmpty()) {
                 return new ErrorResponse(3, "username or password error");
             } else {
@@ -61,7 +61,7 @@ public class LoginController {
 
         if(username != null && password != null) {
 
-            List<User> userList = this.UserService.isExist(username);
+            List<User> userList = this.userService.isExist(username);
             if(userList == null || userList.isEmpty()){
 
                 BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); //Create new instance of encoder for password.
@@ -72,7 +72,7 @@ public class LoginController {
                         String.valueOf(UUID.randomUUID()), //Format the data back to string type to store it as a string.
                         dateFormat.format(new Date()));
 
-                this.UserService.addUser(user); //Add the user to the DB
+                this.userService.addUser(user); //Add the user to the DB
                 return new SuccessResponse(0, user); //Inform user of successful registration.
             }
             else{

@@ -40,7 +40,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.journaldev.spring.model.Person</beans:value>
+				<beans:value>com.PrototypeServer.spring.model.Company</beans:value>
 				<beans:value>com.PrototypeServer.spring.model.User</beans:value>
 			</beans:list>
 		</beans:property>
@@ -59,6 +59,14 @@
 	<beans:bean id="userService" class="com.PrototypeServer.spring.service.UserServiceImpl">
 		<beans:property name="userDAO" ref="userDAO"></beans:property>
 	</beans:bean>
+
+	<beans:bean id="companyDAO" class="com.PrototypeServer.spring.dao.CompanyDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="companyService" class="com.PrototypeServer.spring.service.CompanyServiceImpl">
+		<beans:property name="companyDAO" ref="companyDAO"></beans:property>
+	</beans:bean>
+
 	<context:component-scan base-package="com.PrototypeServer.spring" />
 
 	<tx:annotation-driven transaction-manager="transactionManager"/>

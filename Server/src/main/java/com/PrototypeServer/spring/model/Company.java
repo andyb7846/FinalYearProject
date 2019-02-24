@@ -26,10 +26,10 @@ public class Company {
 
     public Company(){}
 
-    public Company(String name, String create_time, String update_time){
+    public Company(String name, String create_time, User user){
         this.name = name;
         this.create_time = create_time;
-        this.update_time = update_time;
+        this.user = user;
     }
 
     public int getCompany_id() {

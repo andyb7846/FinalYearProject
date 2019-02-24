@@ -17,6 +17,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.andy.prototype.R;
 import com.example.andy.prototype.app.AppConfig;
 import com.example.andy.prototype.app.AppController;
+import com.example.andy.prototype.helper.SQLiteHandler;
+import com.example.andy.prototype.helper.SessionManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +29,9 @@ import java.util.Map;
 public class CreateCompanyActivity extends RootActivity{
 
     private static final String TAG = CreateCompanyActivity.class.getSimpleName();
+
+    private SQLiteHandler db;
+    private SessionManager session;
 
     private EditText companyName;
     private Button btnCreate;
@@ -40,6 +45,8 @@ public class CreateCompanyActivity extends RootActivity{
 
         companyName = (EditText) findViewById(R.id.company_name);
         btnCreate = (Button) findViewById(R.id.btn_create);
+
+        db = new SQLiteHandler(getApplicationContext());
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -83,10 +90,10 @@ public class CreateCompanyActivity extends RootActivity{
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    int id = jObj.getInt("id");
 
                     // Check for error node in json
-                    if (!error) {
+                    if (id == 0) {
 
                         Toast.makeText(getApplicationContext(),
                                 "Create company successfully", Toast.LENGTH_LONG).show();
@@ -118,7 +125,11 @@ public class CreateCompanyActivity extends RootActivity{
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("name", companyName);
+                params.put("company_name", companyName);
+
+                HashMap<String, String> user = db.getUserDetails();
+                String uniqueId = user.get("uid");
+                params.put("unique_id", uniqueId);
 
                 return params;
             }

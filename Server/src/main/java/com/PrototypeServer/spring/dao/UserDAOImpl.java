@@ -56,6 +56,23 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    // Query - Find a user by specifying an ID.
+    public User getUserByUniqueId(String uniqueId) {
+        Session session = this.sessionFactory.getCurrentSession();
+        String hql = String.format("from User where unique_id = '%s'", uniqueId);
+        List<User> userList = session.createQuery(hql).list();
+
+        if(userList.isEmpty()){
+            logger.info("No user found");
+            return null;
+        }
+
+        logger.info("User loaded successfully, User details="+userList.get(0));
+        return userList.get(0);
+
+    }
+
+    @Override
     // Query - Remove a user by specifying an ID
     public void removeUser(int id) {
         Session session = this.sessionFactory.getCurrentSession();

@@ -29,7 +29,7 @@ public class User {
     private String update_time;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private Collection companies;
+    private Collection<Company> companies;
 
     public User(){} // KEEP FOR EMPTY USER TESTING
 
