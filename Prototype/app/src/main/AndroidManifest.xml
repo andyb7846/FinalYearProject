@@ -38,6 +38,15 @@
         <activity
             android:name=".activity.CreateCompanyActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.AccountsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.MyCompaniesActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.MyJobsActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
