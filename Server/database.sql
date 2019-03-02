@@ -66,43 +66,34 @@ CREATE TABLE Job(
  FOREIGN KEY(company_id) REFERENCES Company(company_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Job table';
 
-DROP TABLE IF EXISTS Asset;
-CREATE TABLE Asset(
- asset_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'asset id',
- company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.comapny_id',
- create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
- update_time 			DATETIME 								COMMENT 'update time',
- PRIMARY KEY(asset_id),
- FOREIGN KEY(company_id) REFERENCES Company(company_id)
-)ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Asset table';
 
 DROP TABLE IF EXISTS Property;
 CREATE TABLE Property(
  property_id			INT				NOT NULL AUTO_INCREMENT COMMENT 'property id',
- asset_id				INT  	 		NOT NULL				COMMENT 'reference of Asset.asset_id',
+ company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(property_id),
- FOREIGN KEY(asset_id) REFERENCES Asset(asset_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Porperty table';
 
 
 DROP TABLE IF EXISTS Device;
 CREATE TABLE Device(
  device_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'device id',
- asset_id				INT  	 		NOT NULL				COMMENT 'reference of Asset.asset_id',
+ company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(device_id),
- FOREIGN KEY(asset_id) REFERENCES Asset(asset_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Device table';
 
 DROP TABLE IF EXISTS Vehicle;
 CREATE TABLE Vehicle(
  vehicle_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'vehicle id',
- asset_id				INT  	 		NOT NULL				COMMENT 'reference of Asset.asset_id',
+ company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(vehicle_id),
- FOREIGN KEY(asset_id) REFERENCES Asset(asset_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Vehicle table';

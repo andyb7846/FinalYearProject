@@ -32,7 +32,7 @@ public class RootActivity extends Activity{
                         String title = (String)item.getTitle();
                         switch (title){
                             case "Accounts":
-                                intent = new Intent(getApplicationContext(), AccountsActivity.class);
+                                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
                                 break;
                             case "Statistics":
                                 intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);
