@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.example.andy.prototype.MainActivity;
@@ -32,10 +31,10 @@ public class RootActivity extends Activity{
                         String title = (String)item.getTitle();
                         switch (title){
                             case "Accounts":
-                                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                                intent = new Intent(getApplicationContext(), CompanyDetailsActivity.class);
                                 break;
                             case "Statistics":
-                                intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);
+                                intent = new Intent(getApplicationContext(), CompanyDetailsActivity.class);
                                 break;
                             case "News":
                                 intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);

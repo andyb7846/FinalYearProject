@@ -47,6 +47,12 @@
         <activity
             android:name=".activity.MyJobsActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.CompanyDetailsActivity_backup"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.CompanyDetailsActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

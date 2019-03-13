@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.andy.prototype.R;
 import com.example.andy.prototype.app.AppConfig;
 import com.example.andy.prototype.app.AppController;
+import com.example.andy.prototype.app.HttpsTrustManager;
 import com.example.andy.prototype.helper.SQLiteHandler;
 import com.example.andy.prototype.helper.SessionManager;
 
@@ -109,6 +110,7 @@ public class LoginActivity extends Activity {
         pDialog.setMessage("Logging in ...");
         showDialog();
 
+        HttpsTrustManager.allowAllSSL();
         StringRequest strReq = new StringRequest(Method.POST,
                 AppConfig.URL_LOGIN, new Response.Listener<String>() {
 

@@ -18,6 +18,7 @@ import com.example.andy.prototype.MainActivity;
 import com.example.andy.prototype.R;
 import com.example.andy.prototype.app.AppConfig;
 import com.example.andy.prototype.app.AppController;
+import com.example.andy.prototype.app.HttpsTrustManager;
 import com.example.andy.prototype.helper.SQLiteHandler;
 import com.example.andy.prototype.helper.SessionManager;
 
@@ -109,6 +110,7 @@ public class RegisterActivity extends Activity {
         pDialog.setMessage("Registering ...");
         showDialog();
 
+        HttpsTrustManager.allowAllSSL();
         StringRequest strReq = new StringRequest(Method.POST,
                 AppConfig.URL_REGISTER, new Response.Listener<String>() {
 

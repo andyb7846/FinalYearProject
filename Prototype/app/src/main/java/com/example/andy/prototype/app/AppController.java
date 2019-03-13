@@ -7,6 +7,13 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+import java.io.InputStream;
+import java.security.KeyStore;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManagerFactory;
+
 public class AppController extends Application {
 
     public static final String TAG = AppController.class.getSimpleName();
@@ -63,6 +70,8 @@ public class AppController extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
+
+
 
     // TODO build cancelSpecificRequest
 }
