@@ -24,19 +24,6 @@ CREATE TABLE Admin(
  FOREIGN KEY(user_id) REFERENCES User(user_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Admin table';
 
-
-DROP TABLE IF EXISTS Employee;
-CREATE TABLE Employee(
- employee_id	INT				NOT NULL AUTO_INCREMENT COMMENT 'employee id',
- user_id 		INT				NOT NULL 				COMMENT 'reference of User.user_id',
- forename		VARCHAR(255)	NOT NULL 				COMMENT 'forename',
- surname		VARCHAR(255)	NOT NULL 				COMMENT 'surname',
- create_time 	DATETIME 		NOT NULL 				COMMENT 'create time',
- update_time 	DATETIME 								COMMENT 'update time',
- PRIMARY KEY(employee_id),
- FOREIGN KEY(user_id) REFERENCES User(user_id)
-)ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Employee table';
-
 DROP TABLE IF EXISTS Company;
 CREATE TABLE Company(
  company_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'company id',
@@ -49,22 +36,24 @@ CREATE TABLE Company(
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Company table';
 
 
-DROP TABLE IF EXISTS Job;
-CREATE TABLE Job(
- job_id					INT				NOT NULL AUTO_INCREMENT COMMENT 'job id',
- employee_id			INT 	 								COMMENT 'reference of Employee.employee_id',
+DROP TABLE IF EXISTS Employee;
+CREATE TABLE Employee(
+ employee_id			INT				NOT NULL AUTO_INCREMENT COMMENT 'employee id',
+ user_id 				INT				NOT NULL 				COMMENT 'reference of User.user_id',
  company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.comapny_id',
- name					VARCHAR(255)	NOT NULL 				COMMENT 'job name',
+ forename				VARCHAR(255)	NOT NULL 				COMMENT 'forename',
+ surname				VARCHAR(255)	NOT NULL 				COMMENT 'surname',
+ job_name				VARCHAR(255)	NOT NULL 				COMMENT 'job name',
  tax_id					VARCHAR(255)	 						COMMENT 'tax id',
  goveronment_tax_code	VARCHAR(255)	 						COMMENT 'goveronment tax code',
  salary					INT	 			NOT NULL				COMMENT 'salary',
  tax					INT	 									COMMENT 'tax',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
- PRIMARY KEY(job_id),
- FOREIGN KEY(employee_id) REFERENCES Employee(employee_id),
+ PRIMARY KEY(employee_id),
+ FOREIGN KEY(user_id) REFERENCES User(user_id),
  FOREIGN KEY(company_id) REFERENCES Company(company_id)
-)ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Job table';
+)ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Employee table';
 
 
 DROP TABLE IF EXISTS Property;
