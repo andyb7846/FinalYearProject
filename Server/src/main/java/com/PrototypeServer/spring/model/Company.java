@@ -1,6 +1,7 @@
 package com.PrototypeServer.spring.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity //Define entity in Hibernate
 @Table(name="COMPANY") //Define corresponding table for Company.
@@ -23,6 +24,50 @@ public class Company {
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
     private User user;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private Collection<Employee> employees;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private Collection<Property> properties;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private Collection<Device> devices;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private Collection<Vehicle> vehicles;
+
+    public Collection<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Collection<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public Collection<Property> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Collection<Property> properties) {
+        this.properties = properties;
+    }
+
+    public Collection<Device> getDevices() {
+        return devices;
+    }
+
+    public void setDevices(Collection<Device> devices) {
+        this.devices = devices;
+    }
+
+    public Collection<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(Collection<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
 
     public Company(){}
 

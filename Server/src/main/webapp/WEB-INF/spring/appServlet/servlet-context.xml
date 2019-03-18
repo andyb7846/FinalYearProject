@@ -42,6 +42,10 @@
 			<beans:list>
 				<beans:value>com.PrototypeServer.spring.model.Company</beans:value>
 				<beans:value>com.PrototypeServer.spring.model.User</beans:value>
+				<beans:value>com.PrototypeServer.spring.model.Employee</beans:value>
+				<beans:value>com.PrototypeServer.spring.model.Device</beans:value>
+				<beans:value>com.PrototypeServer.spring.model.Property</beans:value>
+				<beans:value>com.PrototypeServer.spring.model.Vehicle</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -67,6 +71,34 @@
 		<beans:property name="companyDAO" ref="companyDAO"></beans:property>
 	</beans:bean>
 
+	<beans:bean id="employeeDAO" class="com.PrototypeServer.spring.dao.EmployeeDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="employeeService" class="com.PrototypeServer.spring.service.EmployeeServiceImpl">
+		<beans:property name="employeeDAO" ref="employeeDAO"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="vehicleDAO" class="com.PrototypeServer.spring.dao.VehicleDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="vehicleService" class="com.PrototypeServer.spring.service.VehicleServiceImpl">
+		<beans:property name="vehicleDAO" ref="vehicleDAO"></beans:property>
+	</beans:bean>
+	
+	<beans:bean id="propertyDAO" class="com.PrototypeServer.spring.dao.PropertyDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="propertyService" class="com.PrototypeServer.spring.service.PropertyServiceImpl">
+		<beans:property name="propertyDAO" ref="propertyDAO"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="vehicleDAO" class="com.PrototypeServer.spring.dao.VehicleDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	<beans:bean id="vehicleService" class="com.PrototypeServer.spring.service.VehicleServiceImpl">
+		<beans:property name="vehicleDAO" ref="vehicleDAO"></beans:property>
+	</beans:bean>
+	
 	<context:component-scan base-package="com.PrototypeServer.spring" />
 
 	<tx:annotation-driven transaction-manager="transactionManager"/>
