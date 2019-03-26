@@ -92,11 +92,11 @@
 		<beans:property name="propertyDAO" ref="propertyDAO"></beans:property>
 	</beans:bean>
 
-	<beans:bean id="vehicleDAO" class="com.PrototypeServer.spring.dao.VehicleDAOImpl">
+	<beans:bean id="deviceDAO" class="com.PrototypeServer.spring.dao.DeviceDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	<beans:bean id="vehicleService" class="com.PrototypeServer.spring.service.VehicleServiceImpl">
-		<beans:property name="vehicleDAO" ref="vehicleDAO"></beans:property>
+	<beans:bean id="deviceService" class="com.PrototypeServer.spring.service.DeviceServiceImpl">
+		<beans:property name="deviceDAO" ref="deviceDAO"></beans:property>
 	</beans:bean>
 	
 	<context:component-scan base-package="com.PrototypeServer.spring" />

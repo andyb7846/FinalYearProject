@@ -6,6 +6,8 @@ import com.PrototypeServer.spring.model.SuccessResponse;
 import com.PrototypeServer.spring.model.User;
 import com.PrototypeServer.spring.service.CompanyService;
 import com.PrototypeServer.spring.service.UserService;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -54,6 +56,40 @@ public class CompanyController {
 
                 this.companyService.addCompany(company);
                 return new SuccessResponse(0, user);
+            }
+        }
+        else {
+            return new ErrorResponse(2, "company name or unique id should not be empty"); //Verification Statement
+        }
+    }
+
+    @RequestMapping(value = "/company/require", method = RequestMethod.POST)
+    public Object require(@RequestParam(value="unique_id") String uniqueId, Model model) {
+
+        if(uniqueId != null) {
+
+            User user = this.userService.getUserByUniqueId(uniqueId);
+            if (user == null) {
+                return new ErrorResponse(3, "No user found with this unique_id");
+            } else {
+                //return new ErrorResponse(4, "Acutally succeed");
+
+
+                List<Company> companies = companyService.getCompaniesByUserId(user.getUser_id());
+
+                JSONArray ja = new JSONArray();
+                for(Company company: companies){
+                    JSONObject tmp = new JSONObject();
+                    tmp.put("company_id", company.getCompany_id());
+                    tmp.put("name", company.getName());
+                    tmp.put("employees", company.getEmployees().size());
+                    tmp.put("properties", company.getProperties().size());
+                    tmp.put("devices", company.getDevices().size());
+                    tmp.put("vehicles", company.getVehicles().size());
+                    ja.put(tmp);
+                }
+
+                return ja.toString();
             }
         }
         else {

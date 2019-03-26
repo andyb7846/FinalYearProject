@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <Button
+            android:id="@+id/btn_my_employees"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/layout_border_stroke"
+            android:drawableRight="@drawable/new_and_expand"
+            android:text="My Employees"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_create_new_employee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:visibility="gone"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/new_and_expand"
+            android:text="  Create New Employee"
+            android:textSize="15sp" />
+
+        <ListView
+            android:id="@+id/list_my_employees"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            android:visibility="gone">
+        </ListView>
+
+        <Button
+            android:id="@+id/btn_my_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/layout_border_stroke"
+            android:drawableRight="@drawable/new_and_expand"
+            android:text="My Devices"
+            android:textSize="15sp" />
+
+        <ListView
+            android:id="@+id/list_my_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B29090"
+            android:visibility="gone">
+        </ListView>
+
+        <Button
+            android:id="@+id/btn_my_vehicles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/layout_border_stroke"
+            android:drawableRight="@drawable/new_and_expand"
+            android:text="My Vehicles"
+            android:textSize="15sp" />
+
+        <ListView
+            android:id="@+id/list_my_vehicles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="#B29090"
+            android:visibility="gone">
+        </ListView>
+
+        <Button
+            android:id="@+id/btn_my_properties"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/layout_border_stroke"
+            android:drawableRight="@drawable/new_and_expand"
+            android:text="My Properties"
+            android:textSize="15sp" />
+
+        <ListView
+            android:id="@+id/list_my_properties"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="#B29090"
+            android:visibility="gone">
+        </ListView>
+    </LinearLayout>
+
+</ScrollView>

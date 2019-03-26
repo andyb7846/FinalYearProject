@@ -27,12 +27,12 @@ CREATE TABLE Admin(
 DROP TABLE IF EXISTS Company;
 CREATE TABLE Company(
  company_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'company id',
- admin_id				INT 	 								COMMENT 'reference of Admin.admin_id',
+ user_id				INT 	 								COMMENT 'reference of Admin.admin_id',
  name					VARCHAR(255)	NOT NULL 				COMMENT 'company name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(company_id),
- FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
+ FOREIGN KEY(user_id) REFERENCES User(user_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Company table';
 
 
@@ -60,6 +60,7 @@ DROP TABLE IF EXISTS Property;
 CREATE TABLE Property(
  property_id			INT				NOT NULL AUTO_INCREMENT COMMENT 'property id',
  company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
+ name					VARCHAR(255)	NOT NULL 				COMMENT 'property name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(property_id),
@@ -71,6 +72,7 @@ DROP TABLE IF EXISTS Device;
 CREATE TABLE Device(
  device_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'device id',
  company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
+ name					VARCHAR(255)	NOT NULL 				COMMENT 'device name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(device_id),
@@ -81,6 +83,7 @@ DROP TABLE IF EXISTS Vehicle;
 CREATE TABLE Vehicle(
  vehicle_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'vehicle id',
  company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
+ name					VARCHAR(255)	NOT NULL 				COMMENT 'vehicle name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(vehicle_id),
