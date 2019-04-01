@@ -34,7 +34,7 @@ public class CreateCompanyActivity extends RootActivity{
     private SessionManager session;
 
     private EditText companyName;
-    private Button btnCreate;
+    private Button btnUsername, btnCreate;
 
     private ProgressDialog pDialog;
 
@@ -47,6 +47,11 @@ public class CreateCompanyActivity extends RootActivity{
         btnCreate = (Button) findViewById(R.id.btn_create);
 
         db = new SQLiteHandler(getApplicationContext());
+        HashMap<String, String> user = db.getUserDetails();
+        String strUsername = user.get("username");
+        String uniqueId = user.get("uid");
+        btnUsername = findViewById(R.id.btn_username);
+        btnUsername.setText(strUsername);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -98,6 +103,7 @@ public class CreateCompanyActivity extends RootActivity{
 
                         Toast.makeText(getApplicationContext(),
                                 "Create company successfully", Toast.LENGTH_LONG).show();
+                        finish();
                     } else {
                         // Error in login. Get the error message
                         String errorMsg = jObj.getString("error_msg");

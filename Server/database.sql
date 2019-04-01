@@ -32,17 +32,16 @@ CREATE TABLE Company(
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(company_id),
- FOREIGN KEY(user_id) REFERENCES User(user_id)
+ FOREIGN KEY(user_id) REFERENCES User(user_id) ON DELETE SET NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Company table';
 
 
 DROP TABLE IF EXISTS Employee;
 CREATE TABLE Employee(
  employee_id			INT				NOT NULL AUTO_INCREMENT COMMENT 'employee id',
- user_id 				INT				NOT NULL 				COMMENT 'reference of User.user_id',
- company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.comapny_id',
- forename				VARCHAR(255)	NOT NULL 				COMMENT 'forename',
- surname				VARCHAR(255)	NOT NULL 				COMMENT 'surname',
+ company_id				INT  	 								COMMENT 'reference of Company.comapny_id',
+ forename				VARBINARY(255)	NOT NULL 				COMMENT 'forename',
+ surname				VARBINARY(255)	NOT NULL 				COMMENT 'surname',
  job_name				VARCHAR(255)	NOT NULL 				COMMENT 'job name',
  tax_id					VARCHAR(255)	 						COMMENT 'tax id',
  goveronment_tax_code	VARCHAR(255)	 						COMMENT 'goveronment tax code',
@@ -51,41 +50,40 @@ CREATE TABLE Employee(
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(employee_id),
- FOREIGN KEY(user_id) REFERENCES User(user_id),
- FOREIGN KEY(company_id) REFERENCES Company(company_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id) ON DELETE SET NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Employee table';
 
 
 DROP TABLE IF EXISTS Property;
 CREATE TABLE Property(
  property_id			INT				NOT NULL AUTO_INCREMENT COMMENT 'property id',
- company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
+ company_id				INT  	 								COMMENT 'reference of Company.company_id',
  name					VARCHAR(255)	NOT NULL 				COMMENT 'property name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(property_id),
- FOREIGN KEY(company_id) REFERENCES Company(company_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id) ON DELETE SET NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Porperty table';
 
 
 DROP TABLE IF EXISTS Device;
 CREATE TABLE Device(
  device_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'device id',
- company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
+ company_id				INT  	 								COMMENT 'reference of Company.company_id',
  name					VARCHAR(255)	NOT NULL 				COMMENT 'device name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(device_id),
- FOREIGN KEY(company_id) REFERENCES Company(company_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id) ON DELETE SET NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Device table';
 
 DROP TABLE IF EXISTS Vehicle;
 CREATE TABLE Vehicle(
  vehicle_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'vehicle id',
- company_id				INT  	 		NOT NULL				COMMENT 'reference of Company.company_id',
+ company_id				INT  	 								COMMENT 'reference of Company.company_id',
  name					VARCHAR(255)	NOT NULL 				COMMENT 'vehicle name',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(vehicle_id),
- FOREIGN KEY(company_id) REFERENCES Company(company_id)
+ FOREIGN KEY(company_id) REFERENCES Company(company_id) ON DELETE SET NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Vehicle table';

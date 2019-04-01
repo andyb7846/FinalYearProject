@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class EmployeesAdapter extends ArrayAdapter<Employee>{
 
-    private ListView mListView;
     TextView textName;
     TextView textTitle;
     TextView textSalary;
@@ -22,9 +21,8 @@ public class EmployeesAdapter extends ArrayAdapter<Employee>{
     TextView textTaxId;
     TextView textGovTaxCode;
 
-    public EmployeesAdapter(Context context, ArrayList<Employee> employees, ListView listView) {
+    public EmployeesAdapter(Context context, ArrayList<Employee> employees) {
         super(context, 0, employees);
-        this.mListView = listView;
     }
 
     @Override
@@ -43,28 +41,13 @@ public class EmployeesAdapter extends ArrayAdapter<Employee>{
         textTaxId = (TextView) convertView.findViewById(R.id.text_tax_id);
         textGovTaxCode = (TextView) convertView.findViewById(R.id.text_gov_tax_code);
         // Populate the data into the template view using the data object
-        textName.setText(employee.getForename() + employee.getSurname());
+        textName.setText(employee.getForename() + " " + employee.getSurname());
         textTitle.setText(employee.getTitle());
         textSalary.setText(employee.getSalary() + "");
         textTax.setText(employee.getTax() + "");
         textTaxId.setText(employee.getTax_id());
-        textGovTaxCode.setText(employee.getGoveronment_tax_code());
+        textGovTaxCode.setText(employee.getGov_tax_code());
         // Return the completed view to render on screen
         return convertView;
-    }
-
-    public void setDynamicHeight() {
-
-        int height = 0;
-        int desiredWidth = View.MeasureSpec.makeMeasureSpec(this.mListView.getWidth(), View.MeasureSpec.UNSPECIFIED);
-        for (int i = 0; i < this.getCount(); i++) {
-            View listItem = this.getView(i, null, this.mListView);
-            listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-            height += listItem.getMeasuredHeight();
-        }
-        ViewGroup.LayoutParams params = this.mListView.getLayoutParams();
-        params.height = height + (this.mListView.getDividerHeight() * (this.getCount() - 1));
-        this.mListView.setLayoutParams(params);
-        this.mListView.requestLayout();
     }
 }

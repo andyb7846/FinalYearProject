@@ -1,9 +1,6 @@
 package com.PrototypeServer.spring;
 
-import com.PrototypeServer.spring.model.Company;
-import com.PrototypeServer.spring.model.ErrorResponse;
-import com.PrototypeServer.spring.model.SuccessResponse;
-import com.PrototypeServer.spring.model.User;
+import com.PrototypeServer.spring.model.*;
 import com.PrototypeServer.spring.service.CompanyService;
 import com.PrototypeServer.spring.service.UserService;
 import org.json.JSONArray;
@@ -17,9 +14,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -55,6 +61,44 @@ public class CompanyController {
                             user);
 
                 this.companyService.addCompany(company);
+
+                /*
+                try {
+                    SecretKey key = KeyGenerator.getInstance("DES").generateKey();
+                    Cipher desCipher;
+                    desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+                    desCipher.init(Cipher.ENCRYPT_MODE, key);
+
+                    byte[] text = "No body can see me".getBytes();
+                    byte[] textEncrypted = desCipher.doFinal(text);
+
+                    desCipher.init(Cipher.DECRYPT_MODE, key);
+                    byte[] textDecrypted = desCipher.doFinal(textEncrypted);
+
+                    byte[] byteKey = key.getEncoded();
+
+                    File file = new File("hello");
+                    FileInputStream in = new FileInputStream(file);
+                    byte[] content = new byte[(int)file.length()];
+                    in.read(content);
+
+                    if(file.createNewFile()){
+                        FileOutputStream out = new FileOutputStream(file);
+                        out.write(byteKey);
+                        out.close();
+
+                        return new ErrorResponse(2, file.getAbsolutePath());
+                    }
+
+                    return new ErrorResponse(2, "create file failed");
+
+
+                }
+                catch (Exception e){
+                    return new ErrorResponse(2, "No such algorithm"); //Verification Statement
+                }
+                */
+
                 return new SuccessResponse(0, user);
             }
         }
@@ -62,6 +106,7 @@ public class CompanyController {
             return new ErrorResponse(2, "company name or unique id should not be empty"); //Verification Statement
         }
     }
+
 
     @RequestMapping(value = "/company/require", method = RequestMethod.POST)
     public Object require(@RequestParam(value="unique_id") String uniqueId, Model model) {
@@ -94,6 +139,39 @@ public class CompanyController {
         }
         else {
             return new ErrorResponse(2, "company name or unique id should not be empty"); //Verification Statement
+        }
+    }
+
+    //DELETE
+    @RequestMapping(value = "/company/delete", method = RequestMethod.POST)
+    public Object delete(@RequestParam(value="unique_id") String uniqueId,
+                         @RequestParam(value="company_id") int companyId,
+                         Model model){
+
+        if(uniqueId != null) {
+
+            User user = this.userService.getUserByUniqueId(uniqueId);
+            if (user == null) {
+                return new ErrorResponse(3, "No user found with this unique_id");
+            } else {
+                //return new ErrorResponse(4, "Acutally succeed");
+
+                List<Company> companies = companyService.getCompaniesByUserId(user.getUser_id());
+
+
+                for(Company company: companies){
+                    if(company.getCompany_id() == companyId){
+                        user.getCompanies().remove(company);
+                        companyService.removeCompany(companyId);
+                        return new SuccessResponse(0, user);
+                    }
+                }
+
+                return new ErrorResponse(2, "no company found for this unique id");
+            }
+        }
+        else {
+            return new ErrorResponse(2, "company id or unique id should not be empty"); //Verification Statement
         }
     }
 

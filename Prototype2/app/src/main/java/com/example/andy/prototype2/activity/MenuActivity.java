@@ -3,6 +3,7 @@ package com.example.andy.prototype2.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.andy.prototype2.MainActivity;
@@ -12,10 +13,12 @@ import com.example.andy.prototype2.helper.SessionManager;
 
 import java.util.HashMap;
 
-public class MenuActivity extends RootActivity{
+public class MenuActivity extends RootActivity implements View.OnClickListener {
 
     private Button btnMenu;
     private Button btnUsername;
+
+    private Button btnAccount, btnStatics, btnNews, btnHashtag, btnSettings;
 
     private SQLiteHandler db;
     private SessionManager session;
@@ -49,6 +52,46 @@ public class MenuActivity extends RootActivity{
 
         //setMenuBar(btnMenu, btnUsername);
 
+        btnAccount = findViewById(R.id.account);
+        btnStatics = findViewById(R.id.statistics);
+        btnNews = findViewById(R.id.news);
+        btnHashtag = findViewById(R.id.hashtag);
+        btnSettings = findViewById(R.id.settings);
+
+        btnAccount.setOnClickListener(this);
+        btnStatics.setOnClickListener(this);
+        btnNews.setOnClickListener(this);
+        btnHashtag.setOnClickListener(this);
+        btnSettings.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()){
+            case R.id.account:
+                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                break;
+
+            case R.id.statistics:
+                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                break;
+
+            case R.id.news:
+                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                break;
+
+            case R.id.hashtag:
+                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                break;
+
+            case R.id.settings:
+                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                break;
+            default:
+                return;
+        }
+        startActivity(intent);
     }
 
     private void logoutUser() {

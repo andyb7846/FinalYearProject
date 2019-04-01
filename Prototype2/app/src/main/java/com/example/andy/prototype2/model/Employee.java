@@ -2,22 +2,32 @@ package com.example.andy.prototype2.model;
 
 public class Employee {
 
+    int employee_id;
     String surname;
     String forename;
     String title;
     int salary;
     int tax;
     String tax_id;
-    String goveronment_tax_code;
+    String gov_tax_code;
 
-    public Employee(String surname, String forename, String title, int salary, int tax, String tax_id, String goveronment_tax_code) {
+    public Employee(int employee_id, String surname, String forename, String title, int salary, int tax, String tax_id, String gov_tax_code) {
+        this.employee_id = employee_id;
         this.surname = surname;
         this.forename = forename;
         this.title = title;
         this.salary = salary;
         this.tax = tax;
         this.tax_id = tax_id;
-        this.goveronment_tax_code = goveronment_tax_code;
+        this.gov_tax_code = gov_tax_code;
+    }
+
+    public int getEmployee_id() {
+        return employee_id;
+    }
+
+    public void setEmployee_id(int employee_id) {
+        this.employee_id = employee_id;
     }
 
     public String getSurname() {
@@ -68,11 +78,11 @@ public class Employee {
         this.tax_id = tax_id;
     }
 
-    public String getGoveronment_tax_code() {
-        return goveronment_tax_code;
+    public String getGov_tax_code() {
+        return gov_tax_code;
     }
 
-    public void setGoveronment_tax_code(String goveronment_tax_code) {
-        this.goveronment_tax_code = goveronment_tax_code;
+    public void setGov_tax_code(String gov_tax_code) {
+        this.gov_tax_code = gov_tax_code;
     }
 }

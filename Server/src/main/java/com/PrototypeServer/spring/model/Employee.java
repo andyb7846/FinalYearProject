@@ -13,17 +13,13 @@ public class Employee {
     @GeneratedValue(strategy=GenerationType.IDENTITY) // Value doesn't need to be provided. It'll increment by itself.
     private int employee_id;
 
-    @OneToOne
-    @JoinColumn(name="user_id", nullable=false)
-    private User user;
-
     @ManyToOne
     @JoinColumn(name="company_id", nullable=false)
     private Company company;
 
-    private String forename;
+    private byte[] forename;
 
-    private String surname;
+    private byte[] surname;
 
     private String job_name;
 
@@ -39,8 +35,9 @@ public class Employee {
 
     private String update_time;
 
-    public Employee(User user, Company company, String forename, String surname, String job_name, String tax_id, String goveronment_tax_code, int salary, int tax, String create_time) {
-        this.user = user;
+    public Employee(){}
+
+    public Employee(Company company, byte[] forename, byte[] surname, String job_name, String tax_id, String goveronment_tax_code, int salary, int tax, String create_time) {
         this.company = company;
         this.forename = forename;
         this.surname = surname;
@@ -60,14 +57,6 @@ public class Employee {
         this.employee_id = employee_id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Company getCompany() {
         return company;
     }
@@ -76,19 +65,19 @@ public class Employee {
         this.company = company;
     }
 
-    public String getForename() {
+    public byte[] getForename() {
         return forename;
     }
 
-    public void setForename(String forename) {
+    public void setForename(byte[] forename) {
         this.forename = forename;
     }
 
-    public String getSurname() {
+    public byte[] getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public void setSurname(byte[] surname) {
         this.surname = surname;
     }
 

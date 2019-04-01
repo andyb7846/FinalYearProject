@@ -25,16 +25,16 @@ public class Company {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
     private Collection<Employee> employees;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
     private Collection<Property> properties;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
     private Collection<Device> devices;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
     private Collection<Vehicle> vehicles;
 
     public Collection<Employee> getEmployees() {

@@ -37,10 +37,16 @@ public class CreateEmployeeActivity extends RootActivity{
 
     private ProgressDialog pDialog;
 
+    private int companyId;
+    private int update = 0;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_employee);
+
+        companyId = getIntent().getIntExtra("company_id", 0);
+        update = getIntent().getIntExtra("update", 0);
 
         textForname = (EditText) findViewById(R.id.text_forename);
         textSurname = (EditText) findViewById(R.id.text_surname);
@@ -56,6 +62,17 @@ public class CreateEmployeeActivity extends RootActivity{
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
+
+        if(update == 1){
+            textForname.setText(getIntent().getStringExtra("forename"));
+            textSurname.setText(getIntent().getStringExtra("surname"));
+            textTitle.setText(getIntent().getStringExtra("title"));
+            textTaxId.setText(getIntent().getStringExtra("tax_id"));
+            textGovTaxCode.setText(getIntent().getStringExtra("gov_tax_code"));
+            textSalary.setText("" + getIntent().getIntExtra("salary", 0));
+
+            btnCreate.setText("UPDATE");
+        }
 
         // Create Company button Click Event
         btnCreate.setOnClickListener(new View.OnClickListener() {
@@ -102,11 +119,19 @@ public class CreateEmployeeActivity extends RootActivity{
         // Tag used to cancel the request
         String tag_string_req = "req_create_employee";
 
-        pDialog.setMessage("Creating employee ...");
+        String url;
+        if(update == 1) {
+            pDialog.setMessage("Updating employee ...");
+            url = AppConfig.URL_UPDATE_EMPLOYEE;
+        }
+        else {
+            pDialog.setMessage("Creating employee ...");
+            url = AppConfig.URL_CREATE_EMPLOYEE;
+        }
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                AppConfig.URL_CREATE_EMPLOYEE, new Response.Listener<String>() {
+                url, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -120,8 +145,15 @@ public class CreateEmployeeActivity extends RootActivity{
                     // Check for error node in json
                     if (id == 0) {
 
-                        Toast.makeText(getApplicationContext(),
-                                "Create employee successfully", Toast.LENGTH_LONG).show();
+                        if(update == 1) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Update employee successfully", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),
+                                    "Create employee successfully", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
                     } else {
                         // Error in login. Get the error message
                         String errorMsg = jObj.getString("error_msg");
@@ -150,7 +182,8 @@ public class CreateEmployeeActivity extends RootActivity{
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("forname", forname);
+
+                params.put("forename", forname);
                 params.put("surname", surname);
                 params.put("title", title);
                 params.put("tax_id", taxId);
@@ -160,7 +193,13 @@ public class CreateEmployeeActivity extends RootActivity{
                 HashMap<String, String> user = db.getUserDetails();
                 String uniqueId = user.get("uid");
                 params.put("unique_id", uniqueId);
-                params.put("company_id", "1");
+                System.out.println("-----------------------unique id is : " + uniqueId);
+                params.put("company_id", Integer.toString(companyId));
+                System.out.println("-----------------------company id is : " + companyId);
+
+                if(update == 1){
+                    params.put("employee_id", Integer.toString(getIntent().getIntExtra("employee_id", 0)));
+                }
 
                 return params;
             }

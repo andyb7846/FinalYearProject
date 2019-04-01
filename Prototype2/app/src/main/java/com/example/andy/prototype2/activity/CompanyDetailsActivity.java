@@ -1,137 +1,182 @@
 package com.example.andy.prototype2.activity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import com.example.andy.prototype2.R;
-import com.example.andy.prototype2.adapter.EmployeesAdapter;
-import com.example.andy.prototype2.model.Employee;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.andy.prototype2.R;
+import com.example.andy.prototype2.app.AppConfig;
+import com.example.andy.prototype2.app.AppController;
+import com.example.andy.prototype2.app.HttpsTrustManager;
+import com.example.andy.prototype2.helper.SQLiteHandler;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.example.andy.prototype2.app.AppController.TAG;
 
 public class CompanyDetailsActivity extends RootActivity implements View.OnClickListener{
 
-    private ListView listMyEmployees, listMyDevices, listMyVehicles, listMyProperties;
-    private Button btnMyEmployees, btnMyDevices, btnMyVehicles, btnMyProperties;
-    private Button btnCreateNewEmployee;
+    private SQLiteHandler db;
+    private TextView textCompanyName, textOwner;
+    private Button btnUsername, btnEmployees, btnProperties, btnDevices, btnVehicles, btnDelete;
+    private int companyId;
+    private ProgressDialog pDialog;
 
-    private String [] data1 ={"Hiren", "Pratik", "Dhruv", "Narendra", "Piyush", "Priyank", "AAA", "BBB", "CCC", "DDD"};
-    private String [] data2 ={"Kirit", "Miral", "Bhushan", "Jiten", "Ajay", "Kamlesh", "AAA", "BBB", "CCC", "DDD"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.company_details);
 
-        int companyId = getIntent().getIntExtra("company_id", 0);
-        System.out.println("------------------------" + companyId);
+        db = new SQLiteHandler(getApplicationContext());
+        HashMap<String, String> user = db.getUserDetails();
+        String strUsername = user.get("username");
+        String uniqueId = user.get("uid");
+        btnUsername = findViewById(R.id.btn_username);
+        btnUsername.setText(strUsername);
 
-        btnMyEmployees = findViewById(R.id.btn_my_employees);
-        btnMyDevices = findViewById(R.id.btn_my_devices);
-        btnMyVehicles = findViewById(R.id.btn_my_vehicles);
-        btnMyProperties = findViewById(R.id.btn_my_properties);
+        textCompanyName = findViewById(R.id.text_company_name);
+        textOwner = findViewById(R.id.text_owner);
 
-        btnCreateNewEmployee = findViewById(R.id.btn_create_new_employee);
+        btnEmployees = findViewById(R.id.btn_employees);
+        btnProperties = findViewById(R.id.btn_properties);
+        btnDevices = findViewById(R.id.btn_devices);
+        btnVehicles = findViewById(R.id.btn_vehicles);
+        btnDelete = findViewById(R.id.btn_delete);
 
-        btnMyEmployees.setOnClickListener(this);
-        btnMyDevices.setOnClickListener(this);
-        btnMyVehicles.setOnClickListener(this);
-        btnMyProperties.setOnClickListener(this);
+        btnEmployees.setOnClickListener(this);
+        btnProperties.setOnClickListener(this);
+        btnDevices.setOnClickListener(this);
+        btnVehicles.setOnClickListener(this);
+        btnDelete.setOnClickListener(this);
 
-        listMyEmployees = (ListView)findViewById(R.id.list_my_employees);
-        listMyDevices = (ListView)findViewById(R.id.list_my_devices);
-        listMyVehicles = (ListView)findViewById(R.id.list_my_vehicles);
-        listMyProperties = (ListView)findViewById(R.id.list_my_properties);
+        companyId = getIntent().getIntExtra("company_id", 0);
+        textCompanyName.setText(getIntent().getStringExtra("company_name"));
+        textOwner.append(strUsername);
 
-        ArrayList<Employee> employees = new ArrayList<Employee>();
-        EmployeesAdapter employeesAdapter = new EmployeesAdapter(this, employees, listMyEmployees);
-        listMyEmployees.setAdapter(employeesAdapter);
-
-        employeesAdapter.add(new Employee("Brown", "Andy", "Manager", 3000, 300, "12345", "abc"));
-        employeesAdapter.add(new Employee("Brown", "Andy", "Manager", 3000, 300, "12345", "abc"));
-        employeesAdapter.add(new Employee("Brown", "Andy", "Manager", 3000, 300, "12345", "abc"));
-        employeesAdapter.add(new Employee("Brown", "Andy", "Manager", 3000, 300, "12345", "abc"));
-
-
-        //listMyEmployees.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data1));
-        listMyDevices.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data2));
-        listMyVehicles.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data2));
-        listMyProperties.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data2));
-
-        ListUtils.setDynamicHeight(listMyEmployees);
-        ListUtils.setDynamicHeight(listMyDevices);
-        ListUtils.setDynamicHeight(listMyVehicles);
-        ListUtils.setDynamicHeight(listMyProperties);
-
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn_my_employees:
-                if(listMyEmployees.getVisibility() == View.VISIBLE){
-                    listMyEmployees.setVisibility(View.GONE);
-                    btnCreateNewEmployee.setVisibility(View.GONE);
-                }
-                else{
-                    listMyEmployees.setVisibility(View.VISIBLE);
-                    btnCreateNewEmployee.setVisibility(View.VISIBLE);
-                }
-                break;
-
-            case R.id.btn_my_devices:
-                if(listMyDevices.getVisibility() == View.VISIBLE){
-                    listMyDevices.setVisibility(View.GONE);
-                }
-                else{
-                    listMyDevices.setVisibility(View.VISIBLE);
-                }
-                break;
-
-            case R.id.btn_my_vehicles:
-                if(listMyVehicles.getVisibility() == View.VISIBLE){
-                    listMyVehicles.setVisibility(View.GONE);
-                }
-                else{
-                    listMyVehicles.setVisibility(View.VISIBLE);
-                }
-                break;
-
-            case R.id.btn_my_properties:
-                if(listMyProperties.getVisibility() == View.VISIBLE){
-                    listMyProperties.setVisibility(View.GONE);
-                }
-                else{
-                    listMyProperties.setVisibility(View.VISIBLE);
-                }
-                break;
-
+        if(v.getId() == R.id.btn_delete){
+            deleteCompany();
+            return;
         }
+        Intent intent;
+        switch (v.getId()){
+            case R.id.btn_employees:
+                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                break;
+            case R.id.btn_properties:
+                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                break;
+            case R.id.btn_devices:
+                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                break;
+            case R.id.btn_vehicles:
+                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                break;
+            default:
+                System.out.println("Wrong btn id");
+                return;
+        }
+        intent.putExtra("company_id", companyId);
+        startActivity(intent);
     }
 
-    public static class ListUtils {
-        public static void setDynamicHeight(ListView mListView) {
-            ListAdapter mListAdapter = mListView.getAdapter();
-            if (mListAdapter == null) {
-                // when adapter is null
-                return;
+    private void deleteCompany() {
+        // Tag used to cancel the request
+        String tag_string_req = "req_delete_company";
+
+        pDialog.setMessage("Deleting company ...");
+        showDialog();
+
+        HttpsTrustManager.allowAllSSL();
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_DELETE_COMPANY, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Delete Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    int id = jObj.getInt("id");
+
+                    // Check for error node in json
+                    if (id == 0) {
+
+                        Toast.makeText(getApplicationContext(),
+                                "Delete company successfully", Toast.LENGTH_LONG).show();
+                        finish();
+                    } else {
+                        // Error in login. Get the error message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
             }
-            int height = 0;
-            int desiredWidth = View.MeasureSpec.makeMeasureSpec(mListView.getWidth(), View.MeasureSpec.UNSPECIFIED);
-            for (int i = 0; i < mListAdapter.getCount(); i++) {
-                View listItem = mListAdapter.getView(i, null, mListView);
-                listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-                height += listItem.getMeasuredHeight();
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Create Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+                hideDialog();
             }
-            ViewGroup.LayoutParams params = mListView.getLayoutParams();
-            params.height = height + (mListView.getDividerHeight() * (mListAdapter.getCount() - 1));
-            mListView.setLayoutParams(params);
-            mListView.requestLayout();
-        }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("company_id", ""+getIntent().getIntExtra("company_id", 0));
+
+                HashMap<String, String> user = db.getUserDetails();
+                String uniqueId = user.get("uid");
+                params.put("unique_id", uniqueId);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 }

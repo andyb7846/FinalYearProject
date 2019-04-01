@@ -89,6 +89,7 @@ public class MyCompaniesActivity extends RootActivity implements View.OnClickLis
         //Toast.makeText(MyCompaniesActivity.this, ""+companies.get(position).getCompany_id(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), CompanyDetailsActivity.class);
         intent.putExtra("company_id", companies.get(position).getCompany_id());
+        intent.putExtra("company_name", companies.get(position).getName());
         startActivity(intent);
     }
 
@@ -173,6 +174,14 @@ public class MyCompaniesActivity extends RootActivity implements View.OnClickLis
     public void onClick(View v) {
         Intent intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        companiesAdapter.clear();
+        requireCompanies();
+
     }
 
     private void showDialog() {

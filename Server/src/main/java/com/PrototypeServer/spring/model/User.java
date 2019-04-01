@@ -28,7 +28,7 @@ public class User {
 
     private String update_time;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private Collection<Company> companies;
 
     public User(){} // KEEP FOR EMPTY USER TESTING
