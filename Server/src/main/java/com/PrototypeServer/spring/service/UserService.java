@@ -13,5 +13,5 @@ public interface UserService {
     public User getUserById(int id);
     public User getUserByUniqueId(String uniqueId);
     public void removeUser(int id);
-    public List<User> isExist(String username);
+    public List<User> isExist(String email);
 }

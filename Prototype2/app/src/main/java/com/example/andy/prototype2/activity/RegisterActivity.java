@@ -35,6 +35,7 @@ public class RegisterActivity extends Activity {
     private EditText username;
     private EditText password;
     private EditText verifyPassword;
+    private EditText email;
     private ProgressDialog pDialog;
     private SessionManager session;
     private SQLiteHandler db;
@@ -46,6 +47,7 @@ public class RegisterActivity extends Activity {
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
+        email = (EditText) findViewById(R.id.text_email);
         btnRegister = (Button) findViewById(R.id.btn_register);
         btnLogin = (Button) findViewById(R.id.btn_login);
 
@@ -73,9 +75,10 @@ public class RegisterActivity extends Activity {
             public void onClick(View view) {
                 String strUsername = username.getText().toString().trim();
                 String strPassword = password.getText().toString().trim();
+                String strEmail = email.getText().toString().trim();
 
-                if (!strUsername.isEmpty() && !strPassword.isEmpty()) {
-                    registerUser(strUsername, strPassword);
+                if (!strUsername.isEmpty() && !strPassword.isEmpty() && !strEmail.isEmpty()) {
+                    registerUser(strUsername, strPassword, strEmail);
                 } else {
                     Toast.makeText(getApplicationContext(),
                             "Please enter your details!", Toast.LENGTH_LONG)
@@ -96,14 +99,13 @@ public class RegisterActivity extends Activity {
             }
         });
 
-
     }
 
     /**
      * Function to store user in MySQL database will post params(tag, name,
      * email, password) to register url
      * */
-    private void registerUser(final String username, final String password) {
+    private void registerUser(final String username, final String password, final String email) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
@@ -175,6 +177,7 @@ public class RegisterActivity extends Activity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("username", username);
                 params.put("password", password);
+                params.put("email", email);
 
                 return params;
             }

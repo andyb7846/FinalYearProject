@@ -9,6 +9,9 @@ public class AppConfig {
     public static String URL_REGISTER = "https://10.0.2.2:8443/SpringMVCHibernate/register";
 
     // Server user register url
+    public static String URL_FORGET_PASS = "https://10.0.2.2:8443/SpringMVCHibernate/forget";
+
+    // Server user register url
     public static String URL_TWITTER_API = "https://api.twitter.com/1.1/search/tweets.json";
 
     // Server user register url

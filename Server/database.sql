@@ -7,6 +7,7 @@ CREATE TABLE User(
  unique_id		VARCHAR(255) 	NOT NULL 				COMMENT 'unique identifier',
  username		VARCHAR(30)  	NOT NULL 				COMMENT 'user name',
  password		VARCHAR(255)	NOT NULL 				COMMENT 'hash of password',
+ email			VARCHAR(255)	NOT NULL 				COMMENT 'email',
  create_time 	DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 	DATETIME 								COMMENT 'update time',
  PRIMARY KEY(user_id),

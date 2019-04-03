@@ -85,9 +85,9 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     // Query - Find a user by specifying a username
-    public List<User> isExist(String username) {
+    public List<User> isExist(String email) {
         Session session = this.sessionFactory.getCurrentSession();
-        String hql = String.format("from User where username = '%s'", username);
+        String hql = String.format("from User where email = '%s'", email);
         //String hql = "from User where username = aaa";
         List<User> userList = session.createQuery(hql).list();
         return userList;

@@ -31,7 +31,8 @@ public class LoginActivity extends Activity {
     private static final String TAG = LoginActivity.class.getSimpleName();
     private Button btnLogin;
     private Button btnSignup;
-    private EditText username;
+    private Button btnForgetPass;
+    private EditText email;
     private EditText password;
     private ProgressDialog pDialog;
     private SessionManager session;
@@ -42,10 +43,11 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        username = (EditText) findViewById(R.id.username);
+        email = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.btn_login);
         btnSignup = (Button) findViewById(R.id.btn_signup);
+        btnForgetPass = (Button) findViewById(R.id.btn_forget_pass);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -69,13 +71,13 @@ public class LoginActivity extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                String strUsername = username.getText().toString().trim();
+                String strEmail = email.getText().toString().trim();
                 String strPassword = password.getText().toString().trim();
 
                 // Check for empty data in the form
-                if (!strUsername.isEmpty() && !strPassword.isEmpty()) {
+                if (!strEmail.isEmpty() && !strPassword.isEmpty()) {
                     // login user
-                    checkLogin(strUsername, strPassword);
+                    checkLogin(strEmail, strPassword);
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
@@ -98,12 +100,20 @@ public class LoginActivity extends Activity {
             }
         });
 
+        btnForgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),
+                        ForgetPassActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     /**
      * function to verify login details in mysql db
      * */
-    private void checkLogin(final String username, final String password) {
+    private void checkLogin(final String email, final String password) {
         // Tag used to cancel the request
         String tag_string_req = "req_login";
 
@@ -173,7 +183,7 @@ public class LoginActivity extends Activity {
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("username", username);
+                params.put("email", email);
                 params.put("password", password);
 
                 return params;

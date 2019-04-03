@@ -29,13 +29,13 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST) //Defining the URL. Matches the URL Configured in AS
-    public Object login(@RequestParam(value="username") String username, @RequestParam(value="password") String password, Model model) {
+    public Object login(@RequestParam(value="email") String email, @RequestParam(value="password") String password, Model model) {
 
-        if(username != null && password != null) {
+        if(email != null && password != null) {
 
-            List<User> userList = this.userService.isExist(username);
+            List<User> userList = this.userService.isExist(email);
             if (userList == null || userList.isEmpty()) {
-                return new ErrorResponse(3, "username or password error");
+                return new ErrorResponse(3, "email or password error");
             } else {
                 String hashPassword = userList.get(0).getPassword();
 
@@ -57,9 +57,12 @@ public class LoginController {
 
     // User Registration
     @RequestMapping(value= "/register") //Defining the URL. Matches the URL Configured in AppConfig in AS
-    public  Object register(@RequestParam(value="username") String username, @RequestParam(value="password") String password, Model model){
+    public  Object register(@RequestParam(value="username") String username,
+                            @RequestParam(value="password") String password,
+                            @RequestParam(value="email") String email,
+                            Model model){
 
-        if(username != null && password != null) {
+        if(username != null && password != null && email != null) {
 
             List<User> userList = this.userService.isExist(username);
             if(userList == null || userList.isEmpty()){
@@ -70,6 +73,7 @@ public class LoginController {
                 User user = new User(username,
                         passwordEncoder.encode(password),
                         String.valueOf(UUID.randomUUID()), //Format the data back to string type to store it as a string.
+                        email,
                         dateFormat.format(new Date()));
 
                 this.userService.addUser(user); //Add the user to the DB

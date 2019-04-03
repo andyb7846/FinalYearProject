@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public List<User> isExist(String username) {
-        return this.userDAO.isExist(username);
+    public List<User> isExist(String email) {
+        return this.userDAO.isExist(email);
     }
 }
