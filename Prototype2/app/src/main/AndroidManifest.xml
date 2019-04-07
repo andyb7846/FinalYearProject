@@ -77,5 +77,8 @@
         <activity
             android:name=".activity.MyVehiclesActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.ForgetPassActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

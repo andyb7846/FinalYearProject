@@ -3,57 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="62d2fe5e-b2ad-461f-90bf-20e8a95f6ddd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CompanyDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CompanyDetailsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CreateEmployeeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CreateEmployeeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/MyEmployeesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/MyEmployeesActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/adapter/EmployeesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/adapter/EmployeesAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/create_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/create_employee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/my_employees_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/my_employees_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/app/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/app/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/DeviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/VehicleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/DeviceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/PropertyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/PropertyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/VehicleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/VehicleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Device.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Device.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/DeviceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/PropertyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/PropertyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/VehicleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/VehicleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Device.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Device.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Vehicle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,7 +59,7 @@
     <session id="-848704000">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -114,89 +67,48 @@
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="196" />
-          <entry key="xml" value="11" />
+          <entry key="java" value="198" />
+          <entry key="xml" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="196" />
-          <entry key="XML" value="11" />
+          <entry key="JAVA" value="198" />
+          <entry key="XML" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6332" />
-          <entry key="xml" value="81" />
+          <entry key="java" value="6790" />
+          <entry key="xml" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6332" />
-          <entry key="XML" value="81" />
+          <entry key="JAVA" value="6790" />
+          <entry key="XML" value="83" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="162" column="114" lean-forward="true" selection-start-line="162" selection-start-column="114" selection-end-line="162" selection-end-column="114" />
+            <state relative-caret-position="315">
+              <caret line="73" column="56" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1071#1072#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="48" selection-end-column="5" />
-              <folding>
-                <element signature="e#1167#1168#0" expanded="true" />
-                <element signature="e#1233#1234#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="68" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -254,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Company.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/UserService.java" />
@@ -287,6 +198,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/EmailController.java" />
       </list>
     </option>
   </component>
@@ -307,9 +220,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="107" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -430,7 +343,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554492319477" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554663514433" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/RuleMappingPlatform/Test" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -471,7 +384,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23020135" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.252349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -489,7 +402,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="1" visible="true" weight="0.16845638" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.16845638" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -498,7 +411,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23020135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23355705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -537,13 +450,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CompanyController.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/SuccessResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -586,9 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
           <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -598,18 +501,6 @@
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="31" column="130" selection-start-line="31" selection-start-column="130" selection-end-line="31" selection-end-column="130" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1071#1072#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,9 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -815,21 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="68" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
           <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-          <folding>
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,10 +710,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="48" selection-end-column="5" />
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="48" selection-end-column="5" />
           <folding>
             <element signature="e#1167#1168#0" expanded="true" />
             <element signature="e#1233#1234#0" expanded="true" />
@@ -851,10 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        <state relative-caret-position="884">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="68" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -868,12 +745,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="162" column="114" lean-forward="true" selection-start-line="162" selection-start-column="114" selection-end-line="162" selection-end-column="114" />
+        <state relative-caret-position="238">
+          <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/EmailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="73" column="56" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
           </folding>
         </state>
       </provider>

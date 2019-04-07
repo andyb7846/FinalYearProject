@@ -42,6 +42,8 @@ public class ForgetPassActivity extends Activity implements View.OnClickListener
         btnSend = (Button) findViewById(R.id.btn_send);
         textEmail = (TextView) findViewById(R.id.text_email);
 
+        btnSend.setOnClickListener(this);
+
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
