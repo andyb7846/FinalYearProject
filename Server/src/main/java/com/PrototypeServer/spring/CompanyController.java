@@ -1,8 +1,7 @@
 package com.PrototypeServer.spring;
 
 import com.PrototypeServer.spring.model.*;
-import com.PrototypeServer.spring.service.CompanyService;
-import com.PrototypeServer.spring.service.UserService;
+import com.PrototypeServer.spring.service.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +32,10 @@ public class CompanyController {
 
     private CompanyService companyService;
     private UserService userService;
+    private EmployeeService employeeService;
+    private PropertyService propertyService;
+    private DeviceService deviceService;
+    private VehicleService vehicleService;
 
     @Autowired(required=true)
     @Qualifier(value="companyService")
@@ -44,6 +47,30 @@ public class CompanyController {
     @Qualifier(value="userService")
     public void setUserService(UserService ps){
         this.userService = ps;
+    }
+
+    @Autowired(required=true)
+    @Qualifier(value="employeeService")
+    public void setEmployeeService(EmployeeService ps){
+        this.employeeService = ps;
+    }
+
+    @Autowired(required=true)
+    @Qualifier(value="propertyService")
+    public void setPropertyService(PropertyService ps){
+        this.propertyService = ps;
+    }
+
+    @Autowired(required=true)
+    @Qualifier(value="deviceService")
+    public void setDeviceService(DeviceService ps){
+        this.deviceService = ps;
+    }
+
+    @Autowired(required=true)
+    @Qualifier(value="vehicleService")
+    public void setVehicleService(VehicleService ps){
+        this.vehicleService = ps;
     }
 
     @RequestMapping(value = "/company/create", method = RequestMethod.POST)
@@ -127,10 +154,17 @@ public class CompanyController {
                     JSONObject tmp = new JSONObject();
                     tmp.put("company_id", company.getCompany_id());
                     tmp.put("name", company.getName());
+                    /*
                     tmp.put("employees", company.getEmployees().size());
                     tmp.put("properties", company.getProperties().size());
                     tmp.put("devices", company.getDevices().size());
                     tmp.put("vehicles", company.getVehicles().size());
+                    */
+                    tmp.put("employees", employeeService.getEmployeesByCompanyId(company.getCompany_id()).size());
+                    tmp.put("properties", propertyService.getPropertiesByCompanyId(company.getCompany_id()).size());
+                    tmp.put("devices", deviceService.getDevicesByCompanyId(company.getCompany_id()).size());
+                    tmp.put("vehicles", vehicleService.getVehiclesByCompanyId(company.getCompany_id()).size());
+
                     ja.put(tmp);
                 }
 

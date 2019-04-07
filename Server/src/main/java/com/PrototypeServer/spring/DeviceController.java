@@ -4,6 +4,8 @@ import com.PrototypeServer.spring.model.*;
 import com.PrototypeServer.spring.service.CompanyService;
 import com.PrototypeServer.spring.service.DeviceService;
 import com.PrototypeServer.spring.service.UserService;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.ui.Model;
@@ -46,8 +48,10 @@ public class DeviceController {
     @RequestMapping(value = "/device/create", method = RequestMethod.POST)
     public Object create(@RequestParam(value="unique_id") String uniqueId,
                          @RequestParam(value="company_id") int companyId,
-                         @RequestParam(value="name") String name,
-                         Model model) {
+                         @RequestParam(value="brand") String brand,
+                         @RequestParam(value="model") String model,
+                         @RequestParam(value="yearly_cost") int yearlyCost,
+                         Model model2) {
 
         User user = this.userService.getUserByUniqueId(uniqueId);
         if (user == null) {
@@ -69,7 +73,7 @@ public class DeviceController {
 
         //create new device
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Device device = new Device(company, name, dateFormat.format(new Date()));
+        Device device = new Device(company, brand, model, yearlyCost, dateFormat.format(new Date()));
         this.deviceService.addDevice(device);
         return new SuccessResponse(0, user);
     }
@@ -102,8 +106,10 @@ public class DeviceController {
     public Object create(@RequestParam(value="device_id") int deviceId,
                          @RequestParam(value="unique_id") String uniqueId,
                          @RequestParam(value="company_id") int companyId,
-                         @RequestParam(value="name") String name,
-                         Model model) {
+                         @RequestParam(value="brand") String brand,
+                         @RequestParam(value="model") String model,
+                         @RequestParam(value="yearly_cost") int yearlyCost,
+                         Model model2) {
 
         User user = this.userService.getUserByUniqueId(uniqueId);
         if (user == null) {
@@ -125,9 +131,41 @@ public class DeviceController {
 
         //create new device
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Device device = new Device(company, name, dateFormat.format(new Date()));
+        Device device = new Device(company, brand, model, yearlyCost, dateFormat.format(new Date()));
         device.setDevice_id(deviceId);
         this.deviceService.updateDevice(device);
         return new SuccessResponse(0, user);
+    }
+
+    @RequestMapping(value = "/device/require", method = RequestMethod.POST)
+    public Object require(@RequestParam(value="unique_id") String uniqueId, @RequestParam(value="company_id") int companyId, Model model) {
+
+        if(uniqueId != null) {
+            User user = this.userService.getUserByUniqueId(uniqueId);
+            if (user == null) {
+                return new ErrorResponse(3, "No user found with this unique_id");
+            } else {
+                for(Object company : user.getCompanies()){
+                    if(((Company)company).getCompany_id() == companyId){
+                        //return new ErrorResponse(4, "actually succeeded");
+                        JSONArray ja = new JSONArray();
+                        for(Device device : ((Company) company).getDevices()){
+                            JSONObject tmp = new JSONObject();
+                            tmp.put("device_id", device.getDevice_id());
+                            tmp.put("brand", device.getBrand());
+                            tmp.put("model", device.getModel());
+                            tmp.put("yearly_cost", device.getYearly_cost());
+                            ja.put(tmp);
+
+                        }
+                        return ja.toString();
+                    }
+                }
+                return new ErrorResponse(2, "No company found with this company_id and unique_id"); //Verification Statement
+            }
+        }
+        else {
+            return new ErrorResponse(2, "company id or unique id should not be empty"); //Verification Statement
+        }
     }
 }

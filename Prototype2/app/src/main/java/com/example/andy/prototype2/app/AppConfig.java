@@ -31,5 +31,27 @@ public class AppConfig {
 
     // Server user register url
     public static String URL_UPDATE_EMPLOYEE = "https://10.0.2.2:8443/SpringMVCHibernate/employee/update";
+
+    
+    // Property
+    public static String URL_CREATE_PROPERTY = "https://10.0.2.2:8443/SpringMVCHibernate/property/create";
+    
+    public static String URL_UPDATE_PROPERTY = "https://10.0.2.2:8443/SpringMVCHibernate/property/update";
+    
+    public static String URL_REQUIRE_PROPERTIES = "https://10.0.2.2:8443/SpringMVCHibernate/property/require";
+
+    // Device
+    public static String URL_CREATE_DEVICE = "https://10.0.2.2:8443/SpringMVCHibernate/device/create";
+
+    public static String URL_UPDATE_DEVICE = "https://10.0.2.2:8443/SpringMVCHibernate/device/update";
+
+    public static String URL_REQUIRE_DEVICES = "https://10.0.2.2:8443/SpringMVCHibernate/device/require";
+
+    // Vehicles
+    public static String URL_CREATE_VEHICLE = "https://10.0.2.2:8443/SpringMVCHibernate/vehicle/create";
+
+    public static String URL_UPDATE_VEHICLE = "https://10.0.2.2:8443/SpringMVCHibernate/vehicle/update";
+
+    public static String URL_REQUIRE_VEHICLES = "https://10.0.2.2:8443/SpringMVCHibernate/vehicle/require";
 }
 

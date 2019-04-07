@@ -12,7 +12,11 @@ public class Device {
     @GeneratedValue(strategy=GenerationType.IDENTITY) // Value doesn't need to be provided. It'll increment by itself.
     private int device_id;
 
-    private String name;
+    private String brand;
+
+    private String model;
+
+    private int yearly_cost;
 
     private String create_time;
 
@@ -24,19 +28,36 @@ public class Device {
 
     public Device(){}
 
-    public Device(Company company, String name, String create_time){
-
+    public Device(Company company, String brand, String model, int yearly_cost, String create_time) {
+        this.brand = brand;
+        this.model = model;
+        this.yearly_cost = yearly_cost;
         this.create_time = create_time;
         this.company = company;
-        this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYearly_cost() {
+        return yearly_cost;
+    }
+
+    public void setYearly_cost(int yearly_cost) {
+        this.yearly_cost = yearly_cost;
     }
 
     public int getDevice_id() {

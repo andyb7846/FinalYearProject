@@ -4,6 +4,8 @@ import com.PrototypeServer.spring.model.*;
 import com.PrototypeServer.spring.service.CompanyService;
 import com.PrototypeServer.spring.service.VehicleService;
 import com.PrototypeServer.spring.service.UserService;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.ui.Model;
@@ -46,8 +48,11 @@ public class VehicleController {
     @RequestMapping(value = "/vehicle/create", method = RequestMethod.POST)
     public Object create(@RequestParam(value="unique_id") String uniqueId,
                          @RequestParam(value="company_id") int companyId,
-                         @RequestParam(value="name") String name,
-                         Model model) {
+                         @RequestParam(value="manufacturer") String manufacturer,
+                         @RequestParam(value="model") String model,
+                         @RequestParam(value="registration") String registration,
+                         @RequestParam(value="yearly_cost") int yearlyCost,
+                         Model model2) {
 
         User user = this.userService.getUserByUniqueId(uniqueId);
         if (user == null) {
@@ -69,7 +74,7 @@ public class VehicleController {
 
         //create new vehicle
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Vehicle vehicle = new Vehicle(company, name, dateFormat.format(new Date()));
+        Vehicle vehicle = new Vehicle(company, manufacturer, model, registration, yearlyCost, dateFormat.format(new Date()));
         this.vehicleService.addVehicle(vehicle);
         return new SuccessResponse(0, user);
     }
@@ -102,8 +107,11 @@ public class VehicleController {
     public Object create(@RequestParam(value="vehicle_id") int vehicleId,
                          @RequestParam(value="unique_id") String uniqueId,
                          @RequestParam(value="company_id") int companyId,
-                         @RequestParam(value="name") String name,
-                         Model model) {
+                         @RequestParam(value="manufacturer") String manufacturer,
+                         @RequestParam(value="model") String model,
+                         @RequestParam(value="registration") String registration,
+                         @RequestParam(value="yearly_cost") int yearlyCost,
+                         Model model2) {
 
         User user = this.userService.getUserByUniqueId(uniqueId);
         if (user == null) {
@@ -125,9 +133,42 @@ public class VehicleController {
 
         //create new vehicle
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Vehicle vehicle = new Vehicle(company, name, dateFormat.format(new Date()));
+        Vehicle vehicle = new Vehicle(company, manufacturer, model, registration, yearlyCost, dateFormat.format(new Date()));
         vehicle.setVehicle_id(vehicleId);
         this.vehicleService.updateVehicle(vehicle);
         return new SuccessResponse(0, user);
+    }
+
+    @RequestMapping(value = "/vehicle/require", method = RequestMethod.POST)
+    public Object require(@RequestParam(value="unique_id") String uniqueId, @RequestParam(value="company_id") int companyId, Model model) {
+
+        if(uniqueId != null) {
+            User user = this.userService.getUserByUniqueId(uniqueId);
+            if (user == null) {
+                return new ErrorResponse(3, "No user found with this unique_id");
+            } else {
+                for(Object company : user.getCompanies()){
+                    if(((Company)company).getCompany_id() == companyId){
+                        //return new ErrorResponse(4, "actually succeeded");
+                        JSONArray ja = new JSONArray();
+                        for(Vehicle vehicle : ((Company) company).getVehicles()){
+                            JSONObject tmp = new JSONObject();
+                            tmp.put("vehicle_id", vehicle.getVehicle_id());
+                            tmp.put("manufacturer", vehicle.getManufacturer());
+                            tmp.put("model", vehicle.getModel());
+                            tmp.put("registration", vehicle.getRegistration());
+                            tmp.put("yearly_cost", vehicle.getYearly_cost());
+                            ja.put(tmp);
+
+                        }
+                        return ja.toString();
+                    }
+                }
+                return new ErrorResponse(2, "No company found with this company_id and unique_id"); //Verification Statement
+            }
+        }
+        else {
+            return new ErrorResponse(2, "company id or unique id should not be empty"); //Verification Statement
+        }
     }
 }

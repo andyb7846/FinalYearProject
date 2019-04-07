@@ -12,7 +12,13 @@ public class Vehicle {
     @GeneratedValue(strategy=GenerationType.IDENTITY) // Value doesn't need to be provided. It'll increment by itself.
     private int vehicle_id;
 
-    private String name;
+    private String manufacturer;
+
+    private String model;
+
+    private String registration;
+
+    private int yearly_cost;
 
     private String create_time;
 
@@ -24,19 +30,45 @@ public class Vehicle {
 
     public Vehicle(){}
 
-    public Vehicle(Company company, String name, String create_time){
-
+    public Vehicle(Company company, String manufacturer, String model, String registration, int yearly_cost, String create_time) {
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.registration = registration;
+        this.yearly_cost = yearly_cost;
         this.create_time = create_time;
         this.company = company;
-        this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public int getYearly_cost() {
+        return yearly_cost;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setYearly_cost(int yearly_cost) {
+        this.yearly_cost = yearly_cost;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
     }
 
     public int getVehicle_id() {

@@ -40,4 +40,10 @@ public class PropertyServiceImpl implements PropertyService {
     public void removeProperty(int id) {
         this.propertyDAO.removeProperty(id);
     }
+
+    @Override
+    @Transactional
+    public List<Property> getPropertiesByCompanyId(int company_id){
+        return propertyDAO.getPropertiesByCompanyId(company_id);
+    }
 }

@@ -32,8 +32,8 @@ public class CreateEmployeeActivity extends RootActivity{
     private SQLiteHandler db;
     private SessionManager session;
 
-    private EditText textForname, textSurname, textTitle, textTaxId, textGovTaxCode, textSalary;
-    private Button btnCreate;
+    private EditText textForname, textSurname, textTitle, textSalary;
+    private Button btnCreate, btnUsername;
 
     private ProgressDialog pDialog;
 
@@ -51,13 +51,16 @@ public class CreateEmployeeActivity extends RootActivity{
         textForname = (EditText) findViewById(R.id.text_forename);
         textSurname = (EditText) findViewById(R.id.text_surname);
         textTitle = (EditText) findViewById(R.id.text_title);
-        textTaxId = (EditText) findViewById(R.id.text_tax_id);
-        textGovTaxCode = (EditText) findViewById(R.id.text_gov_tax_code);
         textSalary = (EditText) findViewById(R.id.text_salary);
 
         btnCreate = (Button) findViewById(R.id.btn_create);
 
         db = new SQLiteHandler(getApplicationContext());
+        HashMap<String, String> user = db.getUserDetails();
+        String strUsername = user.get("username");
+        String uniqueId = user.get("uid");
+        btnUsername = findViewById(R.id.btn_username);
+        btnUsername.setText(strUsername);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -67,8 +70,6 @@ public class CreateEmployeeActivity extends RootActivity{
             textForname.setText(getIntent().getStringExtra("forename"));
             textSurname.setText(getIntent().getStringExtra("surname"));
             textTitle.setText(getIntent().getStringExtra("title"));
-            textTaxId.setText(getIntent().getStringExtra("tax_id"));
-            textGovTaxCode.setText(getIntent().getStringExtra("gov_tax_code"));
             textSalary.setText("" + getIntent().getIntExtra("salary", 0));
 
             btnCreate.setText("UPDATE");
@@ -81,23 +82,17 @@ public class CreateEmployeeActivity extends RootActivity{
                 String strForname = textForname.getText().toString().trim();
                 String strSurname = textSurname.getText().toString().trim();
                 String strTitle = textTitle.getText().toString().trim();
-                String strTaxId = textTaxId.getText().toString().trim();
-                String strGovTaxId = textGovTaxCode.getText().toString().trim();
                 String strSalary = textSalary.getText().toString().trim();
 
                 // Check for empty data in the form
                 if (!strForname.isEmpty() &&
                         !strSurname.isEmpty() &&
                         !strTitle.isEmpty() &&
-                        !strTaxId.isEmpty() &&
-                        !strGovTaxId.isEmpty() &&
                         !strSalary.isEmpty()) {
                     // create company
                     checkCreate(strForname,
                                 strSurname,
                                 strTitle,
-                                strTaxId,
-                                strGovTaxId,
                                 strSalary);
                 } else {
                     // Prompt user to enter credentials
@@ -113,8 +108,6 @@ public class CreateEmployeeActivity extends RootActivity{
     private void checkCreate(final String forname,
                              final String surname,
                              final String title,
-                             final String taxId,
-                             final String govTaxCode,
                              final String salary) {
         // Tag used to cancel the request
         String tag_string_req = "req_create_employee";
@@ -186,8 +179,6 @@ public class CreateEmployeeActivity extends RootActivity{
                 params.put("forename", forname);
                 params.put("surname", surname);
                 params.put("title", title);
-                params.put("tax_id", taxId);
-                params.put("gov_tax_code", govTaxCode);
                 params.put("salary", salary);
 
                 HashMap<String, String> user = db.getUserDetails();

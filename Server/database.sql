@@ -59,7 +59,10 @@ DROP TABLE IF EXISTS Property;
 CREATE TABLE Property(
  property_id			INT				NOT NULL AUTO_INCREMENT COMMENT 'property id',
  company_id				INT  	 								COMMENT 'reference of Company.company_id',
- name					VARCHAR(255)	NOT NULL 				COMMENT 'property name',
+ street_name			VARCHAR(255)	NOT NULL 				COMMENT 'street name',
+ house_number			VARCHAR(255)  	NOT NULL				COMMENT 'house number',
+ post_code				VARCHAR(255)	NOT NULL 				COMMENT 'post code',
+ yearly_cost 			INT  	 								COMMENT 'yearly cost',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(property_id),
@@ -71,18 +74,24 @@ DROP TABLE IF EXISTS Device;
 CREATE TABLE Device(
  device_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'device id',
  company_id				INT  	 								COMMENT 'reference of Company.company_id',
- name					VARCHAR(255)	NOT NULL 				COMMENT 'device name',
+ brand					VARCHAR(255)	NOT NULL 				COMMENT 'brand',
+ model					VARCHAR(255)	NOT NULL 				COMMENT 'model',
+ yearly_cost 			INT  	 								COMMENT 'yearly cost',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(device_id),
  FOREIGN KEY(company_id) REFERENCES Company(company_id) ON DELETE SET NULL
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Device table';
 
+
 DROP TABLE IF EXISTS Vehicle;
 CREATE TABLE Vehicle(
  vehicle_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'vehicle id',
  company_id				INT  	 								COMMENT 'reference of Company.company_id',
- name					VARCHAR(255)	NOT NULL 				COMMENT 'vehicle name',
+ manufacturer			VARCHAR(255)	NOT NULL 				COMMENT 'manufator',
+ model					VARCHAR(255)	NOT NULL 				COMMENT 'model',
+ registration			VARCHAR(255)	NOT NULL 				COMMENT 'registration',
+ yearly_cost 			INT  	 								COMMENT 'yearly cost',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(vehicle_id),

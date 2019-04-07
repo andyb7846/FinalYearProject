@@ -3,6 +3,7 @@ package com.PrototypeServer.spring.dao;
 import java.util.List;
 
 import com.PrototypeServer.spring.model.Device;
+import com.PrototypeServer.spring.model.Property;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -55,4 +56,16 @@ public class DeviceDAOImpl implements DeviceDAO {
         logger.info("Device deleted successfully, device details="+p);
     }
     // TODO Write delete device by devicename.
+
+    @Override
+    // Query - Find companies by specifying an user_id.
+    public List<Device> getDevicesByCompanyId(int company_id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        String query = "from Device where company_id = " + company_id;
+        List<Device> deviceList = session.createQuery(query).list();
+        for(Device c : deviceList){
+            logger.info("Company List::"+c);
+        }
+        return deviceList;
+    }
 }

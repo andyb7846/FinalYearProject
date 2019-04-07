@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.dao;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Device;
 import com.PrototypeServer.spring.model.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -55,4 +56,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         logger.info("Employee deleted successfully, employee details="+p);
     }
     // TODO Write delete employee by employeename.
+
+    @Override
+    public List<Employee> getEmployeesByCompanyId(int company_id){
+        Session session = this.sessionFactory.getCurrentSession();
+        String query = "from Employee where company_id = " + company_id;
+        List<Employee> employeeList = session.createQuery(query).list();
+        for(Employee c : employeeList){
+            logger.info("Company List::"+c);
+        }
+        return employeeList;
+    }
 }

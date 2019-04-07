@@ -99,8 +99,6 @@ public class MyEmployeesActivity extends RootActivity implements View.OnClickLis
         intent.putExtra("surname", employees.get(position).getSurname());
         intent.putExtra("title", employees.get(position).getTitle());
         intent.putExtra("salary", employees.get(position).getSalary());
-        intent.putExtra("tax_id", employees.get(position).getTax_id());
-        intent.putExtra("gov_tax_code", employees.get(position).getGov_tax_code());
         startActivity(intent);
 
     }
@@ -131,9 +129,7 @@ public class MyEmployeesActivity extends RootActivity implements View.OnClickLis
                                                             jObj.getString("forename"),
                                                             jObj.getString("title"),
                                                             jObj.getInt("salary"),
-                                                            jObj.getInt("tax"),
-                                                            jObj.getString("tax_id"),
-                                                            jObj.getString("gov_tax_code")));
+                                                            jObj.getInt("tax")));
                     }
 
                 } catch (JSONException e) {

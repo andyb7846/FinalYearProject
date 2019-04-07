@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.dao;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Company;
 import com.PrototypeServer.spring.model.Property;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -55,4 +56,16 @@ public class PropertyDAOImpl implements PropertyDAO {
         logger.info("Property deleted successfully, property details="+p);
     }
     // TODO Write delete property by propertyname.
+
+    @Override
+    // Query - Find companies by specifying an user_id.
+    public List<Property> getPropertiesByCompanyId(int company_id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        String query = "from Property where company_id = " + company_id;
+        List<Property> propertyList = session.createQuery(query).list();
+        for(Property c : propertyList){
+            logger.info("Company List::"+c);
+        }
+        return propertyList;
+    }
 }

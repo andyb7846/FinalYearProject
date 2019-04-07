@@ -23,10 +23,6 @@ public class Employee {
 
     private String job_name;
 
-    private String tax_id;
-
-    private String goveronment_tax_code;
-
     private int salary;
 
     private int tax;
@@ -37,13 +33,11 @@ public class Employee {
 
     public Employee(){}
 
-    public Employee(Company company, byte[] forename, byte[] surname, String job_name, String tax_id, String goveronment_tax_code, int salary, int tax, String create_time) {
+    public Employee(Company company, byte[] forename, byte[] surname, String job_name,  int salary, int tax, String create_time) {
         this.company = company;
         this.forename = forename;
         this.surname = surname;
         this.job_name = job_name;
-        this.tax_id = tax_id;
-        this.goveronment_tax_code = goveronment_tax_code;
         this.salary = salary;
         this.tax = tax;
         this.create_time = create_time;
@@ -87,22 +81,6 @@ public class Employee {
 
     public void setJob_name(String job_name) {
         this.job_name = job_name;
-    }
-
-    public String getTax_id() {
-        return tax_id;
-    }
-
-    public void setTax_id(String tax_id) {
-        this.tax_id = tax_id;
-    }
-
-    public String getGoveronment_tax_code() {
-        return goveronment_tax_code;
-    }
-
-    public void setGoveronment_tax_code(String goveronment_tax_code) {
-        this.goveronment_tax_code = goveronment_tax_code;
     }
 
     public int getSalary() {

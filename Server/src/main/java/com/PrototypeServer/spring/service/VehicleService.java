@@ -11,4 +11,5 @@ public interface VehicleService {
     public void updateVehicle(Vehicle p);
     public Vehicle getVehicleById(int id);
     public void removeVehicle(int id);
+    public List<Vehicle> getVehiclesByCompanyId(int company_id);
 }

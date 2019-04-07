@@ -11,4 +11,5 @@ public interface PropertyService {
     public void updateProperty(Property p);
     public Property getPropertyById(int id);
     public void removeProperty(int id);
+    public List<Property> getPropertiesByCompanyId(int company_id);
 }

@@ -57,8 +57,6 @@ public class EmployeeController {
                          @RequestParam(value="forename") String forename,
                          @RequestParam(value="surname") String surname,
                          @RequestParam(value="title") String jobName,
-                         @RequestParam(value="tax_id") String taxId,
-                         @RequestParam(value="gov_tax_code") String govTaxCode,
                          @RequestParam(value="salary") String salary,
                          //@RequestParam(value="tax") int tax,
                          Model model) {
@@ -99,7 +97,7 @@ public class EmployeeController {
 
             //create new employee
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            Employee employee = new Employee(company, byteForename, byteSurname, jobName, taxId, govTaxCode, Integer.parseInt(salary), tax, dateFormat.format(new Date()));
+            Employee employee = new Employee(company, byteForename, byteSurname, jobName, Integer.parseInt(salary), tax, dateFormat.format(new Date()));
             this.employeeService.addEmployee(employee);
             return new SuccessResponse(0, user);
 
@@ -140,8 +138,6 @@ public class EmployeeController {
                          @RequestParam(value="forename") String forename,
                          @RequestParam(value="surname") String surname,
                          @RequestParam(value="title") String jobName,
-                         @RequestParam(value="tax_id") String taxId,
-                         @RequestParam(value="gov_tax_code") String govTaxCode,
                          @RequestParam(value="salary") int salary,
                          //@RequestParam(value="tax") int tax,
                          Model model) {
@@ -182,7 +178,7 @@ public class EmployeeController {
 
             //create new employee
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            Employee employee = new Employee(company, byteForename, byteSurname, jobName, taxId, govTaxCode, salary, tax, dateFormat.format(new Date()));
+            Employee employee = new Employee(company, byteForename, byteSurname, jobName, salary, tax, dateFormat.format(new Date()));
             employee.setEmployee_id(employeeId);
             this.employeeService.updateEmployee(employee);
             return new SuccessResponse(0, user);
@@ -224,8 +220,6 @@ public class EmployeeController {
                                 tmp.put("forename", new String(desCipher.doFinal(employee.getForename())));
                                 tmp.put("surname", new String(desCipher.doFinal(employee.getSurname())));
                                 tmp.put("title", employee.getJob_name());
-                                tmp.put("tax_id", employee.getTax_id());
-                                tmp.put("gov_tax_code", employee.getGoveronment_tax_code());
                                 tmp.put("salary", employee.getSalary());
                                 tmp.put("tax", employee.getTax());
                                 ja.put(tmp);

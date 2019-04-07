@@ -85,13 +85,13 @@ public class CompanyDetailsActivity extends RootActivity implements View.OnClick
                 intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
                 break;
             case R.id.btn_properties:
-                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                intent = new Intent(getApplicationContext(), MyPropertiesActivity.class);
                 break;
             case R.id.btn_devices:
-                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                intent = new Intent(getApplicationContext(), MyDevicesActivity.class);
                 break;
             case R.id.btn_vehicles:
-                intent = new Intent(getApplicationContext(), MyEmployeesActivity.class);
+                intent = new Intent(getApplicationContext(), MyVehiclesActivity.class);
                 break;
             default:
                 System.out.println("Wrong btn id");

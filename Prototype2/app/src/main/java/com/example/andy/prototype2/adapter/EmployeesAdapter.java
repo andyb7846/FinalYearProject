@@ -38,15 +38,11 @@ public class EmployeesAdapter extends ArrayAdapter<Employee>{
         textTitle = (TextView) convertView.findViewById(R.id.text_title);
         textSalary = (TextView) convertView.findViewById(R.id.text_salary);
         textTax = (TextView) convertView.findViewById(R.id.text_tax);
-        textTaxId = (TextView) convertView.findViewById(R.id.text_tax_id);
-        textGovTaxCode = (TextView) convertView.findViewById(R.id.text_gov_tax_code);
         // Populate the data into the template view using the data object
         textName.setText(employee.getForename() + " " + employee.getSurname());
         textTitle.setText(employee.getTitle());
         textSalary.setText(employee.getSalary() + "");
         textTax.setText(employee.getTax() + "");
-        textTaxId.setText(employee.getTax_id());
-        textGovTaxCode.setText(employee.getGov_tax_code());
         // Return the completed view to render on screen
         return convertView;
     }

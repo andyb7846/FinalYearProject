@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.dao;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Property;
 import com.PrototypeServer.spring.model.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -55,4 +56,16 @@ public class VehicleDAOImpl implements VehicleDAO {
         logger.info("Vehicle deleted successfully, vehicle details="+p);
     }
     // TODO Write delete vehicle by vehiclename.
+
+    @Override
+    // Query - Find companies by specifying an user_id.
+    public List<Vehicle> getVehiclesByCompanyId(int company_id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        String query = "from Vehicle where company_id = " + company_id;
+        List<Vehicle> vehicleList = session.createQuery(query).list();
+        for(Vehicle c : vehicleList){
+            logger.info("Company List::"+c);
+        }
+        return vehicleList;
+    }
 }

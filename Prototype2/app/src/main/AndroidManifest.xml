@@ -59,5 +59,23 @@
         <activity
             android:name=".activity.CreateEmployeeActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.CreatePropertyActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.CreateDeviceActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.CreateVehicleActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.MyPropertiesActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.MyDevicesActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.MyVehiclesActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>
