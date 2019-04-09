@@ -90,6 +90,8 @@ public class MyCompaniesActivity extends RootActivity implements View.OnClickLis
         Intent intent = new Intent(getApplicationContext(), CompanyDetailsActivity.class);
         intent.putExtra("company_id", companies.get(position).getCompany_id());
         intent.putExtra("company_name", companies.get(position).getName());
+        intent.putExtra("income", companies.get(position).getIncome());
+        intent.putExtra("benefit", companies.get(position).getBenefit());
         startActivity(intent);
     }
 
@@ -114,7 +116,14 @@ public class MyCompaniesActivity extends RootActivity implements View.OnClickLis
                     JSONArray jArr = new JSONArray(response);
                     for(int i = 0; i < jArr.length(); i ++){
                         JSONObject jObj = jArr.getJSONObject(i);
-                        companiesAdapter.add(new Company(jObj.getInt("company_id"), jObj.getString("name"), jObj.getInt("employees"), jObj.getInt("properties"), jObj.getInt("devices"), jObj.getInt("vehicles")));
+                        companiesAdapter.add(new Company(jObj.getInt("company_id"),
+                                jObj.getString("name"),
+                                jObj.getInt("employees"),
+                                jObj.getInt("properties"),
+                                jObj.getInt("devices"),
+                                jObj.getInt("vehicles"),
+                                jObj.getInt("income"),
+                                jObj.getInt("benefit")));
                     }
                     /*
                     int id = jObj.getInt("id");

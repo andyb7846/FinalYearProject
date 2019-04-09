@@ -8,14 +8,18 @@ public class Company {
     int properties;
     int vehicles;
     int devices;
+    int income;
+    int benefit;
 
-    public Company(int company_id, String name, int employees, int properties, int vehicles, int devices) {
+    public Company(int company_id, String name, int employees, int properties, int vehicles, int devices, int income, int benefit) {
         this.company_id = company_id;
         this.name = name;
         this.employees = employees;
         this.properties = properties;
         this.vehicles = vehicles;
         this.devices = devices;
+        this.income = income;
+        this.benefit = benefit;
     }
 
     public int getCompany_id() {
@@ -64,5 +68,21 @@ public class Company {
 
     public void setDevices(int devices) {
         this.devices = devices;
+    }
+
+    public int getIncome() {
+        return income;
+    }
+
+    public void setIncome(int income) {
+        this.income = income;
+    }
+
+    public int getBenefit() {
+        return benefit;
+    }
+
+    public void setBenefit(int benefit) {
+        this.benefit = benefit;
     }
 }

@@ -17,6 +17,8 @@ public class Company {
 
     private String name;
 
+    private int yearly_income;
+
     private String create_time;
 
     private String update_time;
@@ -36,6 +38,63 @@ public class Company {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
     private Collection<Vehicle> vehicles;
+
+    public Company(){}
+
+    public Company(String name, int yearly_income, String create_time, User user){
+        this.name = name;
+        this.yearly_income = yearly_income;
+        this.create_time = create_time;
+        this.user = user;
+    }
+
+    public int getCompany_id() {
+        return company_id;
+    }
+
+    public void setCompany_id(int company_id) {
+        this.company_id = company_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYearly_income() {
+        return yearly_income;
+    }
+
+    public void setYearly_income(int yearly_income) {
+        this.yearly_income = yearly_income;
+    }
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(String update_time) {
+        this.update_time = update_time;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Collection<Employee> getEmployees() {
         return employees;
@@ -67,54 +126,6 @@ public class Company {
 
     public void setVehicles(Collection<Vehicle> vehicles) {
         this.vehicles = vehicles;
-    }
-
-    public Company(){}
-
-    public Company(String name, String create_time, User user){
-        this.name = name;
-        this.create_time = create_time;
-        this.user = user;
-    }
-
-    public int getCompany_id() {
-        return company_id;
-    }
-
-    public void setCompany_id(int company_id) {
-        this.company_id = company_id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCreate_time() {
-        return create_time;
-    }
-
-    public void setCreate_time(String create_time) {
-        this.create_time = create_time;
-    }
-
-    public String getUpdate_time() {
-        return update_time;
-    }
-
-    public void setUpdate_time(String update_time) {
-        this.update_time = update_time;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     @Override

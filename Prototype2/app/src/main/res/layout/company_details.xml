@@ -9,9 +9,6 @@
     tools:context=".activity.MenuActivity">
 
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -37,18 +34,32 @@
         app:layout_constraintTop_toBottomOf="@+id/include2" />
 
     <TextView
-        android:id="@+id/text_owner"
+        android:id="@+id/text_income"
         android:layout_width="373dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Owner: "
+        android:text="Income: "
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_company_name" />
+
+    <TextView
+        android:id="@+id/text_benefit"
+        android:layout_width="373dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Benefit: "
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_income" />
 
     <Button
         android:id="@+id/btn_employees"
@@ -56,15 +67,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/layout_border_stroke"
         android:text="My Employees"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_owner" />
+        app:layout_constraintTop_toBottomOf="@+id/text_benefit" />
 
     <Button
         android:id="@+id/btn_properties"

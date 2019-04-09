@@ -33,7 +33,7 @@ public class CreateCompanyActivity extends RootActivity{
     private SQLiteHandler db;
     private SessionManager session;
 
-    private EditText companyName;
+    private EditText companyName, textIncome;
     private Button btnUsername, btnCreate;
 
     private ProgressDialog pDialog;
@@ -44,6 +44,7 @@ public class CreateCompanyActivity extends RootActivity{
         setContentView(R.layout.create_company);
 
         companyName = (EditText) findViewById(R.id.company_name);
+        textIncome = (EditText) findViewById(R.id.text_income);
         btnCreate = (Button) findViewById(R.id.btn_create);
 
         db = new SQLiteHandler(getApplicationContext());
@@ -62,11 +63,12 @@ public class CreateCompanyActivity extends RootActivity{
 
             public void onClick(View view) {
                 String strCompanyName = companyName.getText().toString().trim();
+                String strIncome = textIncome.getText().toString().trim();
 
                 // Check for empty data in the form
                 if (!strCompanyName.isEmpty()) {
                     // create company
-                    checkCreate(strCompanyName);
+                    checkCreate(strCompanyName, strIncome);
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
@@ -78,7 +80,7 @@ public class CreateCompanyActivity extends RootActivity{
         });
     }
 
-    private void checkCreate(final String companyName) {
+    private void checkCreate(final String companyName, final String income) {
         // Tag used to cancel the request
         String tag_string_req = "req_create_company";
 
@@ -133,6 +135,7 @@ public class CreateCompanyActivity extends RootActivity{
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("company_name", companyName);
+                params.put("income", income);
 
                 HashMap<String, String> user = db.getUserDetails();
                 String uniqueId = user.get("uid");

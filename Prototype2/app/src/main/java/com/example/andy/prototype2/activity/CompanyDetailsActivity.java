@@ -31,7 +31,7 @@ import static com.example.andy.prototype2.app.AppController.TAG;
 public class CompanyDetailsActivity extends RootActivity implements View.OnClickListener{
 
     private SQLiteHandler db;
-    private TextView textCompanyName, textOwner;
+    private TextView textCompanyName, textIncome, textBenefit;
     private Button btnUsername, btnEmployees, btnProperties, btnDevices, btnVehicles, btnDelete;
     private int companyId;
     private ProgressDialog pDialog;
@@ -50,7 +50,8 @@ public class CompanyDetailsActivity extends RootActivity implements View.OnClick
         btnUsername.setText(strUsername);
 
         textCompanyName = findViewById(R.id.text_company_name);
-        textOwner = findViewById(R.id.text_owner);
+        textIncome = findViewById(R.id.text_income);
+        textBenefit = findViewById(R.id.text_benefit);
 
         btnEmployees = findViewById(R.id.btn_employees);
         btnProperties = findViewById(R.id.btn_properties);
@@ -66,7 +67,8 @@ public class CompanyDetailsActivity extends RootActivity implements View.OnClick
 
         companyId = getIntent().getIntExtra("company_id", 0);
         textCompanyName.setText(getIntent().getStringExtra("company_name"));
-        textOwner.append(strUsername);
+        textIncome.append("" + getIntent().getIntExtra("income", 0));
+        textBenefit.append("" + getIntent().getIntExtra("benefit", 0));
 
         // Progress dialog
         pDialog = new ProgressDialog(this);

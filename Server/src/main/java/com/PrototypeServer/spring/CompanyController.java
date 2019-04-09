@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -74,7 +75,9 @@ public class CompanyController {
     }
 
     @RequestMapping(value = "/company/create", method = RequestMethod.POST)
-    public Object create(@RequestParam(value="company_name") String companyName, @RequestParam(value="unique_id") String uniqueId, Model model) {
+    public Object create(@RequestParam(value="company_name") String companyName,
+                         @RequestParam(value="income") int income,
+                         @RequestParam(value="unique_id") String uniqueId, Model model) {
 
         if(companyName != null && uniqueId != null) {
 
@@ -84,6 +87,7 @@ public class CompanyController {
             } else {
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 Company company = new Company(companyName,
+                            income,
                             dateFormat.format(new Date()),
                             user);
 
@@ -154,6 +158,7 @@ public class CompanyController {
                     JSONObject tmp = new JSONObject();
                     tmp.put("company_id", company.getCompany_id());
                     tmp.put("name", company.getName());
+                    tmp.put("income", company.getYearly_income());
                     /*
                     tmp.put("employees", company.getEmployees().size());
                     tmp.put("properties", company.getProperties().size());
@@ -165,6 +170,29 @@ public class CompanyController {
                     tmp.put("devices", deviceService.getDevicesByCompanyId(company.getCompany_id()).size());
                     tmp.put("vehicles", vehicleService.getVehiclesByCompanyId(company.getCompany_id()).size());
 
+                    int outcome = 0;
+                    Collection<Employee> employees = employeeService.getEmployeesByCompanyId(company.getCompany_id());
+                    for(Employee employee: employees){
+                        outcome += employee.getSalary();
+                    }
+
+                    Collection<Property> propertys = propertyService.getPropertiesByCompanyId(company.getCompany_id());
+                    for(Property property: propertys){
+                        outcome += property.getYearly_cost();
+                    }
+
+                    Collection<Device> devices = deviceService.getDevicesByCompanyId(company.getCompany_id());
+                    for(Device device: devices){
+                        outcome += device.getYearly_cost();
+                    }
+
+                    Collection<Vehicle> vehicles = vehicleService.getVehiclesByCompanyId(company.getCompany_id());
+                    for(Vehicle vehicle: vehicles){
+                        outcome += vehicle.getYearly_cost();
+                    }
+
+                    tmp.put("benefit", company.getYearly_income()-outcome);
+                    
                     ja.put(tmp);
                 }
 
