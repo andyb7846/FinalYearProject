@@ -68,4 +68,16 @@ public class PropertyDAOImpl implements PropertyDAO {
         }
         return propertyList;
     }
+
+
+    @Override
+    // List all properties
+    public List<Property> listProperties() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Property> propertyList = session.createQuery("from Property").list();
+        for(Property c : propertyList){
+            logger.info("Property List::"+c);
+        }
+        return propertyList;
+    }
 }

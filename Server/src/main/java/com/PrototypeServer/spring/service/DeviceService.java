@@ -11,5 +11,6 @@ public interface DeviceService {
     public void updateDevice(Device p);
     public Device getDeviceById(int id);
     public void removeDevice(int id);
+    public List<Device> listDevices();
     public List<Device> getDevicesByCompanyId(int company_id);
 }

@@ -41,6 +41,13 @@ public class DeviceServiceImpl implements DeviceService {
     public void removeDevice(int id) {
         this.deviceDAO.removeDevice(id);
     }
+
+
+    @Transactional
+    @Override
+    public List<Device> listDevices() {
+        return deviceDAO.listDevices();
+    }
     
     @Override
     @Transactional

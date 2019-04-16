@@ -11,18 +11,20 @@ CREATE TABLE User(
  create_time 	DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 	DATETIME 								COMMENT 'update time',
  PRIMARY KEY(user_id),
- UNIQUE(username),
+ UNIQUE(email),
  UNIQUE(unique_id)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'User table';
 
 DROP TABLE IF EXISTS Admin;
 CREATE TABLE Admin(
  admin_id		INT				NOT NULL AUTO_INCREMENT COMMENT 'admin id',
- user_id 		INT				NOT NULL 				COMMENT 'reference of User.user_id',
+ name			VARCHAR(30)  	NOT NULL 				COMMENT 'admin name',
+ password		VARCHAR(255)	NOT NULL 				COMMENT 'hash of password',
+ email			VARCHAR(255)	NOT NULL 				COMMENT 'email',
  create_time 	DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 	DATETIME 								COMMENT 'update time',
- PRIMARY KEY(admin_id), 
- FOREIGN KEY(user_id) REFERENCES User(user_id)
+ PRIMARY KEY(admin_id),
+ UNIQUE(email)
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT 'Admin table';
 
 DROP TABLE IF EXISTS Company;

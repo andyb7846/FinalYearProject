@@ -45,4 +45,11 @@ public class CompanyServiceImpl implements CompanyService{
     public void removeCompany(int id) {
         this.companyDAO.removeCompany(id);
     }
+
+
+    @Override
+    @Transactional
+    public Company getCompanyById(int id) {
+        return this.companyDAO.getCompanyById(id);
+    }
 }

@@ -80,5 +80,8 @@
         <activity
             android:name=".activity.ForgetPassActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.StatisticsActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

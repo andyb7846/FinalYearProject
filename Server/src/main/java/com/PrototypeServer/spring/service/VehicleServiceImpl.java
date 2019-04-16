@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.service;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Company;
 import com.PrototypeServer.spring.model.Property;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,12 @@ public class VehicleServiceImpl implements VehicleService {
     @Transactional
     public Vehicle getVehicleById(int id) {
         return this.vehicleDAO.getVehicleById(id);
+    }
+
+    @Transactional
+    @Override
+    public List<Vehicle> listVehicles() {
+        return vehicleDAO.listVehicles();
     }
 
     @Override

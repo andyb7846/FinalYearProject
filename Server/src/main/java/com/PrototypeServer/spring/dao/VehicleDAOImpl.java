@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.dao;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Company;
 import com.PrototypeServer.spring.model.Property;
 import com.PrototypeServer.spring.model.Vehicle;
 import org.hibernate.Session;
@@ -65,6 +66,18 @@ public class VehicleDAOImpl implements VehicleDAO {
         List<Vehicle> vehicleList = session.createQuery(query).list();
         for(Vehicle c : vehicleList){
             logger.info("Company List::"+c);
+        }
+        return vehicleList;
+    }
+
+
+    @Override
+    // List all vehicles
+    public List<Vehicle> listVehicles() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Vehicle> vehicleList = session.createQuery("from Vehicle").list();
+        for(Vehicle c : vehicleList){
+            logger.info("Vehicle List::"+c);
         }
         return vehicleList;
     }

@@ -11,6 +11,7 @@ public interface PropertyDAO {
     public void addProperty(Property c);
     public void updateProperty(Property c);
     public Property getPropertyById(int id);
+    public List<Property> listProperties();
     public void removeProperty(int id);
     public List<Property> getPropertiesByCompanyId(int company_id);
 }

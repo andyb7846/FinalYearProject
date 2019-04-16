@@ -68,4 +68,16 @@ public class DeviceDAOImpl implements DeviceDAO {
         }
         return deviceList;
     }
+
+
+    @Override
+    // List all devices
+    public List<Device> listDevices() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Device> deviceList = session.createQuery("from Device").list();
+        for(Device c : deviceList){
+            logger.info("Device List::"+c);
+        }
+        return deviceList;
+    }
 }

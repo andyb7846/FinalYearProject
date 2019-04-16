@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.service;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Company;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,12 @@ public class PropertyServiceImpl implements PropertyService {
     @Transactional
     public Property getPropertyById(int id) {
         return this.propertyDAO.getPropertyById(id);
+    }
+
+    @Transactional
+    @Override
+    public List<Property> listProperties() {
+        return propertyDAO.listProperties();
     }
 
     @Override

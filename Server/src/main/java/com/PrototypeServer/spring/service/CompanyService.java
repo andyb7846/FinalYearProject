@@ -10,6 +10,7 @@ public interface CompanyService {
     public void addCompany(Company c);
     public void updateCompany(Company c);
     public List<Company> listCompanies();
+    public Company getCompanyById(int id);
     public List<Company> getCompaniesByUserId(int user_id);
     public void removeCompany(int id);
 }

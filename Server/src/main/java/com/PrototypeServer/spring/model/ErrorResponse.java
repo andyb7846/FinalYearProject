@@ -1,6 +1,6 @@
 package com.PrototypeServer.spring.model;
 
-// This is the response sent to the android application if the login is unsuccessful. We used ErrorResponse in the LoginController.
+// This is the response sent to the android application if the login is unsuccessful. We used ErrorResponse in the WebLoginController.
 public class ErrorResponse {
     int id;
     String message;

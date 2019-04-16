@@ -11,6 +11,7 @@ public interface VehicleDAO {
     public void addVehicle(Vehicle c);
     public void updateVehicle(Vehicle c);
     public Vehicle getVehicleById(int id);
+    public List<Vehicle> listVehicles();
     public void removeVehicle(int id);
     public List<Vehicle> getVehiclesByCompanyId(int company_id);
 }

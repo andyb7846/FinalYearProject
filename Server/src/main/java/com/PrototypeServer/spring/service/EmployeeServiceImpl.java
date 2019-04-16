@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.service;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Company;
 import com.PrototypeServer.spring.model.Device;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     public Employee getEmployeeById(int id) {
         return this.employeeDAO.getEmployeeById(id);
+    }
+
+    @Transactional
+    @Override
+    public List<Employee> listEmployees() {
+        return employeeDAO.listEmployees();
     }
 
     @Override

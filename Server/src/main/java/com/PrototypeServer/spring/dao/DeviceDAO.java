@@ -11,6 +11,7 @@ public interface DeviceDAO {
     public void addDevice(Device c);
     public void updateDevice(Device c);
     public Device getDeviceById(int id);
+    public List<Device> listDevices();
     public void removeDevice(int id);
     public List<Device> getDevicesByCompanyId(int company_id);
 }

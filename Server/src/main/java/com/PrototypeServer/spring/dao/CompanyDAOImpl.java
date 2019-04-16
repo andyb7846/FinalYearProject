@@ -47,6 +47,15 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
+    // Query - Find a company by specifying an ID.
+    public Company getCompanyById(int id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Company p = (Company) session.load(Company.class, new Integer(id));
+        logger.info("Company loaded successfully, Company details="+p);
+        return p;
+    }
+
+    @Override
     // Query - Find companies by specifying an user_id.
     public List<Company> getCompaniesByUserId(int user_id) {
         Session session = this.sessionFactory.getCurrentSession();

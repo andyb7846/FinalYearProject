@@ -2,6 +2,7 @@ package com.PrototypeServer.spring.dao;
 
 import java.util.List;
 
+import com.PrototypeServer.spring.model.Company;
 import com.PrototypeServer.spring.model.Device;
 import com.PrototypeServer.spring.model.Employee;
 import org.hibernate.Session;
@@ -64,6 +65,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         List<Employee> employeeList = session.createQuery(query).list();
         for(Employee c : employeeList){
             logger.info("Company List::"+c);
+        }
+        return employeeList;
+    }
+
+
+    @Override
+    // List all employees
+    public List<Employee> listEmployees() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Employee> employeeList = session.createQuery("from Employee").list();
+        for(Employee c : employeeList){
+            logger.info("Employee List::"+c);
         }
         return employeeList;
     }
