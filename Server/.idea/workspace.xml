@@ -2,104 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62d2fe5e-b2ad-461f-90bf-20e8a95f6ddd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/MenuActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/MenuActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prototype2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/EmployeeDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/VehicleDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/ErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/CompanyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/DeviceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/PropertyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/service/VehicleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/greeting.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicle.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/EmailController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/DeviceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/DeviceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/DeviceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/DeviceDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/EmployeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/EmployeeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/EmployeeDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/EmployeeDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/PropertyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/PropertyDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/PropertyDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/PropertyDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/VehicleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/VehicleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/VehicleDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/dao/VehicleDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/DeviceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/DeviceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/DeviceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/DeviceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/EmployeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/PropertyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/PropertyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/PropertyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/PropertyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/VehicleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/VehicleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/VehicleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/service/VehicleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/PersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/dao/PersonDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/dao/PersonDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/dao/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/dao/UserDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/model/ErrorResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/model/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/model/SuccessResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/service/PersonService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/service/PersonServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/journaldev/spring/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/hello.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/person.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/company.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/company.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/device.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/device.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/employee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/employee.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/property.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/property.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/EmailController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/DeviceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/DeviceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/DeviceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/DeviceDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/EmployeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/EmployeeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/EmployeeDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/EmployeeDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/PropertyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/PropertyDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/PropertyDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/PropertyDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/VehicleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/VehicleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/VehicleDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/dao/VehicleDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/DeviceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/DeviceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/DeviceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/DeviceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/EmployeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/PropertyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/PropertyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/PropertyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/PropertyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/VehicleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/VehicleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/VehicleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/service/VehicleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/PersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/dao/PersonDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/dao/PersonDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/dao/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/dao/UserDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/model/ErrorResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/model/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/model/SuccessResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/service/PersonService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/service/PersonServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/journaldev/spring/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/vehicle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/vehicle.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -152,38 +72,38 @@
     <session id="-848704000">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="java" value="320" />
           <entry key="js" value="2" />
-          <entry key="jsp" value="42" />
+          <entry key="jsp" value="54" />
           <entry key="xml" value="29" />
-          <entry key="yml" value="1" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JAVA" value="320" />
-          <entry key="JSP" value="42" />
+          <entry key="JSP" value="54" />
           <entry key="JavaScript" value="2" />
           <entry key="XML" value="29" />
-          <entry key="YAML" value="1" />
+          <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -192,7 +112,7 @@
           <entry key="html" value="15" />
           <entry key="java" value="8692" />
           <entry key="js" value="9" />
-          <entry key="jsp" value="825" />
+          <entry key="jsp" value="2364" />
           <entry key="xml" value="95" />
         </counts>
       </usages-collector>
@@ -200,7 +120,7 @@
         <counts>
           <entry key="HTML" value="15" />
           <entry key="JAVA" value="8692" />
-          <entry key="JSP" value="825" />
+          <entry key="JSP" value="2364" />
           <entry key="JavaScript" value="9" />
           <entry key="PLAIN_TEXT" value="25" />
           <entry key="XML" value="95" />
@@ -211,19 +131,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="165" column="10" lean-forward="true" selection-start-line="165" selection-start-column="10" selection-end-line="175" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
+            <state relative-caret-position="183">
+              <caret line="192" column="40" lean-forward="true" selection-start-line="192" selection-start-column="40" selection-end-line="206" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -231,47 +142,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebPropertyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="49" column="61" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="98">
+              <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="130" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAOImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="49" column="40" lean-forward="true" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
+            <state relative-caret-position="885">
+              <caret line="363" column="15" selection-start-line="363" selection-start-column="15" selection-end-line="363" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -279,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicle.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="166" column="34" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
+            <state relative-caret-position="270">
+              <caret line="130" column="25" lean-forward="true" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -298,11 +179,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logistics</find>
-      <find>Device</find>
-      <find>Vehicle</find>
-      <find>property</find>
-      <find>resources</find>
       <find>loginController</find>
       <find>DataTables Example</find>
       <find>Users</find>
@@ -324,6 +200,15 @@
       <find>Employee</find>
       <find>employee</find>
       <find>delete</find>
+      <find>tables</find>
+      <find>email</find>
+      <find>Email</find>
+      <find>Add</find>
+      <find>yearly_income</find>
+      <find>Street</find>
+      <find>Add U</find>
+      <find>Add Use</find>
+      <find>Add User</find>
     </findStrings>
     <replaceStrings>
       <replace>Properties</replace>
@@ -389,7 +274,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/demo/datatables-demo.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebEmployeeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebCompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/CompanyDAOImpl.java" />
@@ -399,11 +283,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebPropertyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebUserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebVehicleController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicle.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" />
       </list>
     </option>
   </component>
@@ -424,10 +309,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="344" />
-    <option name="y" value="240" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="122" />
+    <option name="y" value="-28" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -438,7 +323,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -599,11 +483,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555425973543" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555838734019" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/RuleMappingPlatform/Test" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -654,7 +539,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -662,10 +547,10 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22121535" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2295302" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.44295302" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.44192636" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -674,7 +559,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.44295302" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.3432836" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.34295303" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -689,19 +574,19 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22121535" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.2295302" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44334278" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.44295302" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32981783" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.44295302" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.34362417" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.34295303" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -718,28 +603,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="133" selection-start-line="14" selection-start-column="133" selection-end-line="14" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/model/WebCompany.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,12 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1724#1725#0" expanded="true" />
-            <element signature="e#1779#1780#0" expanded="true" />
-            <element signature="e#1829#1830#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,10 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
           <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
-          <folding>
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -771,9 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,9 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,19 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -983,9 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="108" column="55" lean-forward="true" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -993,9 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="839">
           <caret line="52" column="38" selection-start-line="39" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,9 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,9 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,9 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,51 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="635">
           <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="165" column="10" lean-forward="true" selection-start-line="165" selection-start-column="10" selection-end-line="175" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicle.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="166" column="34" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="175" column="34" selection-start-line="175" selection-start-column="34" selection-end-line="175" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1088,16 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebPropertyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="49" column="61" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/DeviceDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1105,10 +873,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebPropertyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/dao/PropertyDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="49" column="40" lean-forward="true" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+        <state relative-caret-position="363">
+          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/greeting.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employee.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="185" column="56" selection-start-line="185" selection-start-column="56" selection-end-line="185" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tables.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="347" column="38" lean-forward="true" selection-start-line="347" selection-start-column="38" selection-end-line="347" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/property.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="192" column="40" lean-forward="true" selection-start-line="192" selection-start-column="40" selection-end-line="206" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/device.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="130" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="130" column="25" lean-forward="true" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="363" column="15" selection-start-line="363" selection-start-column="15" selection-end-line="363" selection-end-column="15" />
         </state>
       </provider>
     </entry>

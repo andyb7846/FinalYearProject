@@ -34,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="tables.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="user">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -163,17 +163,60 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Employees</h1>
 
-          <a href="#" id="add" class="btn btn-primary btn-icon-split">
-          			<span class="text">Add</span>
-          		  </a>
+          <button id='add' type="button" class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#myModal">
+                      <span class="text">Add</span>
+                    </button>
 
-          		  <a href="#" id="update" class="btn btn-primary btn-icon-split">
-          			<span class="text">Update</span>
-          		  </a>
 
-          		  <a href="#" id="delete" class="btn btn-danger btn-icon-split">
-          			<span class="text">Delete</span>
-          		  </a>
+          <button id='update' type="button" class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#myModal">
+            <span class="text">Update</span>
+          </button>
+
+          <a href="#" id="delete" class="btn btn-danger btn-icon-split">
+            <span class="text">Delete</span>
+          </a>
+
+          <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Add Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <form class="user">
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-user" id="company_id" placeholder="Enter Company id...">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-user" id="forename" placeholder="Enter Forename...">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-user" id="surname" placeholder="Enter Surname...">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-user" id="title" placeholder="Enter Title...">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-user" id="salary" placeholder="Enter Salary...">
+                        </div>
+                      </form>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Add</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -288,7 +331,13 @@
   <script src="${pageContext.request.contextPath}/resources/js/demo/datatables-demo.js"></script>
 
 <script>
-  var employee_id = "";
+      var is_add = 0;
+      var employee_id = "";
+      var company_id = "";
+      var forename = "";
+      var surname = "";
+      var title = "";
+      var salary = "";
 
 	  $(document).ready(function() {
 	  var table = $('#dataTable').DataTable();
@@ -297,19 +346,53 @@
 		$('#dataTable tbody').on( 'click', 'tr', function () {
 			if ( $(this).hasClass('selected') ) {
 				$(this).removeClass('selected');
-				employee_id = ""
+			    employee_id = "";
+			    company_id = "";
+			    forename = "";
+			    surname = "";
+			    title = "";
+			    salary = "";
 			}
 			else {
 				table.$('tr.selected').removeClass('selected');
 				$(this).addClass('selected');
 				employee_id = $(this).find("td:nth-child(1)").text();
+				company_id = $(this).find("td:nth-child(2)").text();
+				forename = $(this).find("td:nth-child(3)").text();
+				surname = $(this).find("td:nth-child(4)").text();
+				title = $(this).find("td:nth-child(5)").text();
+				salary = $(this).find("td:nth-child(6)").text();
 			}
 		} );
 
 		$('#delete').click(function(){
 			window.location.replace("https://127.0.0.1:8443/SpringMVCHibernate/web/employee/delete?employee_id=" + employee_id);
-			console.log(employee_id)
+			console.log(employee_id);
 		});
+
+		$('#update').click(function(){
+            is_add = 0;
+            $('#company_id').val(company_id);
+            $('#forename').val(forename);
+            $('#surname').val(surname);
+            $('#title').val(title);
+            $('#salary').val(salary);
+        });
+
+        $('#add').click(function(){
+           is_add = 1;
+           $('#company_id').val("");
+           $('#forename').val("");
+           $('#surname').val("");
+           $('#title').val("");
+           $('#salary').val("");
+        });
+
+        $('#myModal').on('show.bs.modal', function (e) {
+           if(employee_id == "" && is_add == 0){
+               return e.preventDefault();
+           }
+        });
     });
   </script>
 </body>

@@ -34,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="tables.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="user">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -163,17 +163,58 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Devices</h1>
 
-          <a href="#" id="add" class="btn btn-primary btn-icon-split">
-                    			<span class="text">Add</span>
-                    		  </a>
+          <button id='add' type="button" class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#myModal">
+                      <span class="text">Add</span>
+                    </button>
 
-                    		  <a href="#" id="update" class="btn btn-primary btn-icon-split">
-                    			<span class="text">Update</span>
-                    		  </a>
 
-                    		  <a href="#" id="delete" class="btn btn-danger btn-icon-split">
-                    			<span class="text">Delete</span>
-                    		  </a>
+                    <button id='update' type="button" class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#myModal">
+                      <span class="text">Update</span>
+                    </button>
+
+                    <a href="#" id="delete" class="btn btn-danger btn-icon-split">
+                      <span class="text">Delete</span>
+                    </a>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Add Device</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <form class="user">
+                                        <div class="form-group">
+                                          <input type="text" class="form-control form-control-user" id="company_id" placeholder="Enter Company id...">
+                                        </div>
+                                        <div class="form-group">
+                                          <input type="text" class="form-control form-control-user" id="brand" placeholder="Enter Brand...">
+                                        </div>
+                                        <div class="form-group">
+                                          <input type="text" class="form-control form-control-user" id="model" placeholder="Enter Model...">
+                                        </div>
+                                        <div class="form-group">
+                                          <input type="text" class="form-control form-control-user" id="yearly_cost" placeholder="Enter Yearly Cost...">
+                                        </div>
+
+                                      </form>
+                          </div>
+
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">Add</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -282,7 +323,12 @@
   <script src="${pageContext.request.contextPath}/resources/js/demo/datatables-demo.js"></script>
 
 <script>
+  var is_add = 0;
   var device_id = "";
+  var company_id = "";
+  var brand = "";
+  var model = "";
+  var yearly_cost = "";
 
 	  $(document).ready(function() {
 	  var table = $('#dataTable').DataTable();
@@ -292,11 +338,20 @@
 			if ( $(this).hasClass('selected') ) {
 				$(this).removeClass('selected');
 				device_id = ""
+                company_id = "";
+                brand = "";
+                model = "";
+                yearly_cost = "";
+
 			}
 			else {
 				table.$('tr.selected').removeClass('selected');
 				$(this).addClass('selected');
 				device_id = $(this).find("td:nth-child(1)").text();
+				company_id = $(this).find("td:nth-child(2)").text();
+				brand = $(this).find("td:nth-child(3)").text();
+				model = $(this).find("td:nth-child(4)").text();
+				yearly_cost = $(this).find("td:nth-child(5)").text();
 			}
 		} );
 
@@ -304,6 +359,28 @@
 			window.location.replace("https://127.0.0.1:8443/SpringMVCHibernate/web/device/delete?device_id=" + device_id);
 			console.log(device_id)
 		});
+
+		$('#update').click(function(){
+            is_add = 0;
+            $('#company_id').val(company_id);
+            $('#brand').val(brand);
+            $('#model').val(model);
+            $('#yearly_cost').val(yearly_cost);
+        });
+
+        $('#add').click(function(){
+           is_add = 1;
+            $('#company_id').val("");
+            $('#brand').val("");
+            $('#model').val("");
+            $('#yearly_cost').val("");
+        });
+
+        $('#myModal').on('show.bs.modal', function (e) {
+           if(device_id == "" && is_add == 0){
+               return e.preventDefault();
+           }
+        });
     });
   </script>
   
