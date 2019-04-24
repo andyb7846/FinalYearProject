@@ -50,9 +50,7 @@ public class UserDAOImpl implements UserDAO {
     // Query - Find a user by specifying an ID.
     public User getUserById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        User p = (User) session.load(User.class, new Integer(id));
-        logger.info("User loaded successfully, User details="+p);
-        return p;
+        return (User)session.get(User.class, new Integer(id));
     }
 
     @Override

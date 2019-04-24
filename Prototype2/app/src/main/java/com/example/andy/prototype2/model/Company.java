@@ -11,7 +11,7 @@ public class Company {
     int income;
     int benefit;
 
-    public Company(int company_id, String name, int employees, int properties, int vehicles, int devices, int income, int benefit) {
+    public Company(int company_id, String name, int employees, int properties, int devices, int vehicles, int income, int benefit) {
         this.company_id = company_id;
         this.name = name;
         this.employees = employees;

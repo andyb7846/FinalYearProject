@@ -50,7 +50,7 @@ public class AdminDAOImpl implements AdminDAO {
     // Query - Find a user by specifying an ID.
     public Admin getAdminById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Admin p = (Admin) session.load(Admin.class, new Integer(id));
+        Admin p = (Admin) session.get(Admin.class, new Integer(id));
         logger.info("Admin loaded successfully, Admin details="+p);
         return p;
     }

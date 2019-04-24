@@ -1,8 +1,7 @@
 package com.PrototypeServer.spring.web;
 
-import com.PrototypeServer.spring.model.Admin;
-import com.PrototypeServer.spring.model.Employee;
-import com.PrototypeServer.spring.model.ErrorResponse;
+import com.PrototypeServer.spring.model.*;
+import com.PrototypeServer.spring.service.CompanyService;
 import com.PrototypeServer.spring.service.EmployeeService;
 import com.PrototypeServer.spring.web.model.WebEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,10 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -32,6 +34,15 @@ public class WebEmployeeController {
     public void setEmployeeService(EmployeeService ps){
         this.employeeService = ps;
     }
+
+    private CompanyService companyService;
+
+    @Autowired(required=true) //This means the program doesn't have to call this function, it's done automatically.
+    @Qualifier(value="companyService") //Define the name of the called function. This allows us to have more than 1.
+    public void setCompanyService(CompanyService ps){
+        this.companyService = ps;
+    }
+    
 
     @RequestMapping(value = "web/employee", method = RequestMethod.GET)
     public String login(HttpSession session, Model model) {
@@ -86,5 +97,139 @@ public class WebEmployeeController {
         }
 
         return "redirect:/web/employee";
+    }
+
+    @RequestMapping(value = "web/employee/add", method = RequestMethod.POST)
+    public String add(HttpSession session,
+                      @RequestParam(value="company_id") int company_id,
+                      @RequestParam(value="forename") String forename,
+                      @RequestParam(value="surname") String surname,
+                      @RequestParam(value="title") String title,
+                      @RequestParam(value="salary") int salary,
+                      Model model) {
+
+        if(session.getAttribute("admin") == null){
+            return "redirect:/web/login";
+        }
+
+        if(forename != "" && surname != "" && title != "") {
+
+            Company company = this.companyService.getCompanyById(company_id);
+            if (company == null) {
+                model.addAttribute("error", "No company found with this id");
+                return "404"; // Verification Technique.
+            }
+
+            int tax = caculateTax(salary);
+
+            try {
+                File file = new File("hello");
+                FileInputStream in = new FileInputStream(file);
+                byte[] content = new byte[(int) file.length()];
+                in.read(content);
+
+                SecretKey key = new SecretKeySpec(content, "DES");
+                Cipher desCipher;
+                desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+                desCipher.init(Cipher.ENCRYPT_MODE, key);
+
+                byte[] byteForename = desCipher.doFinal(forename.getBytes());
+                byte[] byteSurname = desCipher.doFinal(surname.getBytes());
+
+                //create new employee
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Employee employee = new Employee(company, byteForename, byteSurname, title, salary, tax, dateFormat.format(new Date()));
+                this.employeeService.addEmployee(employee);
+                return "redirect:/web/employee";
+
+            }catch (Exception e){
+                model.addAttribute("error", "key error");
+                return "404"; // Verification Technique.
+            }
+
+        }
+        else {
+            model.addAttribute("error", "The form input should not be empty");
+            return "404"; // Verification Technique.
+        }
+    }
+
+    @RequestMapping(value = "web/employee/update", method = RequestMethod.POST)
+    public String update(HttpSession session,
+                         @RequestParam(value="employee_id") int employee_id,
+                         @RequestParam(value="company_id") int company_id,
+                         @RequestParam(value="forename") String forename,
+                         @RequestParam(value="surname") String surname,
+                         @RequestParam(value="title") String title,
+                         @RequestParam(value="salary") int salary,
+                         Model model) {
+
+        if(session.getAttribute("admin") == null){
+            return "redirect:/web/login";
+        }
+
+        if(forename != "" && surname != "" && title != "") {
+
+            Employee employee = this.employeeService.getEmployeeById(employee_id);
+            if (employee == null) {
+                model.addAttribute("error", "No employee found with this id");
+                return "404"; // Verification Technique.
+            }
+
+            Company company = this.companyService.getCompanyById(company_id);
+            if (company == null) {
+                model.addAttribute("error", "No company found with this id");
+                return "404"; // Verification Technique.
+            }
+
+            int tax = caculateTax(salary);
+
+            try {
+                File file = new File("hello");
+                FileInputStream in = new FileInputStream(file);
+                byte[] content = new byte[(int) file.length()];
+                in.read(content);
+
+                SecretKey key = new SecretKeySpec(content, "DES");
+                Cipher desCipher;
+                desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+                desCipher.init(Cipher.ENCRYPT_MODE, key);
+
+                byte[] byteForename = desCipher.doFinal(forename.getBytes());
+                byte[] byteSurname = desCipher.doFinal(surname.getBytes());
+
+                //create new employee
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                employee.setCompany(company);
+                employee.setForename(byteForename);
+                employee.setSurname(byteSurname);
+                employee.setJob_name(title);
+                employee.setSalary(salary);
+                employee.setTax(tax);
+                this.employeeService.updateEmployee(employee);
+                return "redirect:/web/employee";
+
+            }catch (Exception e){
+                model.addAttribute("error", "key error");
+                return "404"; // Verification Technique.
+            }
+
+        }
+        else {
+            model.addAttribute("error", "The form input should not be empty");
+            return "404"; // Verification Technique.
+        }
+    }
+
+    public int caculateTax(int salary){
+        if(salary <= 11850){
+            return 0;
+        }
+        else if(salary <= 46350){
+            return (int)((salary - 11850)*0.2);
+        }
+        else{
+            return (int)((salary - 46350)*0.4);
+        }
     }
 }

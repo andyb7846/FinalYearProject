@@ -189,18 +189,18 @@
 
                           <!-- Modal body -->
                           <div class="modal-body">
-                            <form class="user">
+                            <form class="user" id="myForm" action="${pageContext.request.contextPath}/web/device/add" method="post">
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="company_id" placeholder="Enter Company id...">
+                                          <input type="text" class="form-control form-control-user" id="company_id" name="company_id" placeholder="Enter Company id...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="brand" placeholder="Enter Brand...">
+                                          <input type="text" class="form-control form-control-user" id="brand" name="brand" placeholder="Enter Brand...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="model" placeholder="Enter Model...">
+                                          <input type="text" class="form-control form-control-user" id="model" name="model" placeholder="Enter Model...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="yearly_cost" placeholder="Enter Yearly Cost...">
+                                          <input type="text" class="form-control form-control-user" id="yearly_cost" name="yearly_cost" placeholder="Enter Yearly Cost...">
                                         </div>
 
                                       </form>
@@ -208,7 +208,7 @@
 
                           <!-- Modal footer -->
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger">Add</button>
+                            <button id="modal_add" type="button" class="btn btn-danger">Add</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                           </div>
 
@@ -362,6 +362,8 @@
 
 		$('#update').click(function(){
             is_add = 0;
+            $('#modal_title').text('Update Device');
+		    $("#modal_add").prop('value', 'Update');
             $('#company_id').val(company_id);
             $('#brand').val(brand);
             $('#model').val(model);
@@ -370,6 +372,8 @@
 
         $('#add').click(function(){
            is_add = 1;
+           $('#modal_title').text('Add Device');
+		   $("#modal_add").prop('value', 'Add');
             $('#company_id').val("");
             $('#brand').val("");
             $('#model').val("");
@@ -380,6 +384,19 @@
            if(device_id == "" && is_add == 0){
                return e.preventDefault();
            }
+        });
+        
+        $('#modal_add').click(function(){
+            if(is_add == 1){
+                $('#device_id').remove();
+                $('#myForm').attr('action', "device/add").submit();
+                $('#myForm').submit();
+            }
+            else{
+                var a = '<input id="device_id" type="hidden" name="device_id" value="' + device_id + '" />';
+                $('#myForm').append(a);
+                $('#myForm').attr('action', "device/update").submit();
+            }
         });
     });
   </script>

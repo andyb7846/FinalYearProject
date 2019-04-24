@@ -40,7 +40,7 @@ public class DeviceDAOImpl implements DeviceDAO {
     // Query - Find a device by specifying an ID.
     public Device getDeviceById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Device p = (Device) session.load(Device.class, new Integer(id));
+        Device p = (Device) session.get(Device.class, new Integer(id));
         logger.info("Device loaded successfully, Device details="+p);
         return p;
     }

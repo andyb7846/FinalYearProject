@@ -64,7 +64,7 @@ public class LoginController {
 
         if(username != null && password != null && email != null) {
 
-            List<User> userList = this.userService.isExist(username);
+            List<User> userList = this.userService.isExist(email);
             if(userList == null || userList.isEmpty()){
 
                 BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); //Create new instance of encoder for password.

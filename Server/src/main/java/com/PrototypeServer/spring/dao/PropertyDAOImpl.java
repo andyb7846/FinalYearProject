@@ -40,7 +40,7 @@ public class PropertyDAOImpl implements PropertyDAO {
     // Query - Find a property by specifying an ID.
     public Property getPropertyById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Property p = (Property) session.load(Property.class, new Integer(id));
+        Property p = (Property) session.get(Property.class, new Integer(id));
         logger.info("Property loaded successfully, Property details="+p);
         return p;
     }

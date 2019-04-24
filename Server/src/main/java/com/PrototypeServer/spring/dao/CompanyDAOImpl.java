@@ -50,7 +50,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     // Query - Find a company by specifying an ID.
     public Company getCompanyById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Company p = (Company) session.load(Company.class, new Integer(id));
+        Company p = (Company) session.get(Company.class, new Integer(id));
         logger.info("Company loaded successfully, Company details="+p);
         return p;
     }

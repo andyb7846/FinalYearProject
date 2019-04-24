@@ -189,21 +189,21 @@
 
                           <!-- Modal body -->
                           <div class="modal-body">
-                            <form class="user">
+                            <form class="user" id="myForm" action="${pageContext.request.contextPath}/web/property/add" method="post">
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="company_id" placeholder="Enter Company id...">
+                                          <input type="text" class="form-control form-control-user" id="company_id" name="company_id" placeholder="Enter Company id...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="street_name" placeholder="Enter Street Name...">
+                                          <input type="text" class="form-control form-control-user" id="street_name" name="street_name" placeholder="Enter Street Name...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="house_number" placeholder="Enter House Number...">
+                                          <input type="text" class="form-control form-control-user" id="house_number" name="house_number" placeholder="Enter House Number...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="post_code" placeholder="Enter Post Code...">
+                                          <input type="text" class="form-control form-control-user" id="post_code" name="post_code" placeholder="Enter Post Code...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="yearly_cost" placeholder="Enter Yearly Cost...">
+                                          <input type="text" class="form-control form-control-user" id="yearly_cost" name="yearly_cost" placeholder="Enter Yearly Cost...">
                                         </div>
 
                                       </form>
@@ -211,7 +211,7 @@
 
                           <!-- Modal footer -->
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger">Add</button>
+                            <button id="modal_add" type="button" class="btn btn-danger">Add</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                           </div>
 
@@ -371,6 +371,8 @@
 
 		$('#update').click(function(){
             is_add = 0;
+            $('#modal_title').text('Update Property');
+		    $("#modal_add").prop('value', 'Update');
             $('#company_id').val(company_id);
             $('#street_name').val(street_name);
             $('#house_number').val(house_number);
@@ -380,6 +382,8 @@
 
         $('#add').click(function(){
            is_add = 1;
+           $('#modal_title').text('Add Property');
+		   $("#modal_add").prop('value', 'Add');
             $('#company_id').val("");
             $('#street_name').val("");
             $('#house_number').val("");
@@ -391,6 +395,19 @@
            if(property_id == "" && is_add == 0){
                return e.preventDefault();
            }
+        });
+        
+        $('#modal_add').click(function(){
+            if(is_add == 1){
+                $('#property_id').remove();
+                $('#myForm').attr('action', "property/add").submit();
+                $('#myForm').submit();
+            }
+            else{
+                var a = '<input id="property_id" type="hidden" name="property_id" value="' + property_id + '" />';
+                $('#myForm').append(a);
+                $('#myForm').attr('action', "property/update").submit();
+            }
         });
     });
   </script>

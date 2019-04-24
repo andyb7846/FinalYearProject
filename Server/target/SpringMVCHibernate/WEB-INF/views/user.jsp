@@ -183,21 +183,21 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Add User</h4>
+                  <h4 id="modal_title" class="modal-title">Add User</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                  <form class="user">
+                  <form class="user" id="myForm" action="${pageContext.request.contextPath}/web/user/add" method="post">
                               <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="username" placeholder="Enter User Name...">
+                                <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Enter User Name...">
                               </div>
                               <div class="form-group">
-                                <input type="password" class="form-control form-control-user" id="password" placeholder="Password">
+                                <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                               </div>
 
                             </form>
@@ -205,7 +205,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger">Add</button>
+                  <button id="modal_add" type="button" class="btn btn-danger">Add</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
 
@@ -352,12 +352,16 @@
 
 		$('#update').click(function(){
 		    is_add = 0;
+            $('#modal_title').text('Update User');
+		    $("#modal_add").prop('value', 'Update');
         	$('#username').val(username);
         	$('#email').val(email);
         });
 
         $('#add').click(function(){
            is_add = 1;
+           $('#modal_title').text('Add User');
+		   $("#modal_add").prop('value', 'Add');
            $('#username').val("");
            $('#email').val("");
         });
@@ -366,6 +370,19 @@
            if(user_id == "" && is_add == 0){
                return e.preventDefault();
            }
+        });
+
+        $('#modal_add').click(function(){
+            if(is_add == 1){
+                $('#user_id').remove();
+                $('#myForm').attr('action', "user/add").submit();
+                $('#myForm').submit();
+            }
+            else{
+                var a = '<input id="user_id" type="hidden" name="user_id" value="' + user_id + '" />';
+                $('#myForm').append(a);
+                $('#myForm').attr('action', "user/update").submit();
+            }
         });
     });
   </script>

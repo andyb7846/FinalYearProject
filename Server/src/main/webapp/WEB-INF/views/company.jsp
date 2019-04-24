@@ -189,15 +189,15 @@
 
                           <!-- Modal body -->
                           <div class="modal-body">
-                            <form class="user">
+                            <form class="user" id="myForm" action="${pageContext.request.contextPath}/web/company/add" method="post">
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="user_id" placeholder="Enter User id...">
+                                          <input type="text" class="form-control form-control-user" id="user_id" name="user_id" placeholder="Enter User id...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="name" placeholder="Enter Name...">
+                                          <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Enter Name...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="yearly_income" placeholder="Enter Yearly Income...">
+                                          <input type="text" class="form-control form-control-user" id="yearly_income" name="yearly_income" placeholder="Enter Yearly Income...">
                                         </div>
 
                                       </form>
@@ -205,7 +205,7 @@
 
                           <!-- Modal footer -->
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger">Add</button>
+                            <button id="modal_add" type="button" class="btn btn-danger">Add</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                           </div>
 
@@ -352,6 +352,8 @@
 
 		$('#update').click(function(){
             is_add = 0;
+            $('#modal_title').text('Update Company');
+		    $("#modal_add").prop('value', 'Update');
             $('#user_id').val(user_id);
             $('#name').val(name);
             $('#yearly_income').val(yearly_income);
@@ -359,6 +361,8 @@
 
         $('#add').click(function(){
            is_add = 1;
+           $('#modal_title').text('Add Company');
+		   $("#modal_add").prop('value', 'Add');
            $('#user_id').val("");
            $('#name').val("");
            $('#yearly_income').val("");
@@ -368,6 +372,19 @@
            if(company_id == "" && is_add == 0){
                return e.preventDefault();
            }
+        });
+
+        $('#modal_add').click(function(){
+            if(is_add == 1){
+                $('#company_id').remove();
+                $('#myForm').attr('action', "company/add").submit();
+                $('#myForm').submit();
+            }
+            else{
+                var a = '<input id="company_id" type="hidden" name="company_id" value="' + company_id + '" />';
+                $('#myForm').append(a);
+                $('#myForm').attr('action', "company/update").submit();
+            }
         });
     });
   </script>

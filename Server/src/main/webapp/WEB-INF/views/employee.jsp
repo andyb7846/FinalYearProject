@@ -189,28 +189,28 @@
 
                   <!-- Modal body -->
                   <div class="modal-body">
-                    <form class="user">
+                    <form class="user" id="myForm" action="${pageContext.request.contextPath}/web/employee/add" method="post">
                         <div class="form-group">
-                          <input type="text" class="form-control form-control-user" id="company_id" placeholder="Enter Company id...">
+                          <input type="text" class="form-control form-control-user" id="company_id" name="company_id" placeholder="Enter Company id...">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control form-control-user" id="forename" placeholder="Enter Forename...">
+                          <input type="text" class="form-control form-control-user" id="forename" name="forename" placeholder="Enter Forename...">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control form-control-user" id="surname" placeholder="Enter Surname...">
+                          <input type="text" class="form-control form-control-user" id="surname" name="surname" placeholder="Enter Surname...">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control form-control-user" id="title" placeholder="Enter Title...">
+                          <input type="text" class="form-control form-control-user" id="title" name="title" placeholder="Enter Title...">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control form-control-user" id="salary" placeholder="Enter Salary...">
+                          <input type="text" class="form-control form-control-user" id="salary" name="salary" placeholder="Enter Salary...">
                         </div>
                       </form>
                   </div>
 
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Add</button>
+                    <button id="modal_add" type="button" class="btn btn-danger">Add</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
 
@@ -372,6 +372,8 @@
 
 		$('#update').click(function(){
             is_add = 0;
+            $('#modal_title').text('Update Employee');
+		    $("#modal_add").prop('value', 'Update');
             $('#company_id').val(company_id);
             $('#forename').val(forename);
             $('#surname').val(surname);
@@ -381,6 +383,8 @@
 
         $('#add').click(function(){
            is_add = 1;
+           $('#modal_title').text('Add Employee');
+		   $("#modal_add").prop('value', 'Add');
            $('#company_id').val("");
            $('#forename').val("");
            $('#surname').val("");
@@ -392,6 +396,19 @@
            if(employee_id == "" && is_add == 0){
                return e.preventDefault();
            }
+        });
+        
+        $('#modal_add').click(function(){
+            if(is_add == 1){
+                $('#employee_id').remove();
+                $('#myForm').attr('action', "employee/add").submit();
+                $('#myForm').submit();
+            }
+            else{
+                var a = '<input id="employee_id" type="hidden" name="employee_id" value="' + employee_id + '" />';
+                $('#myForm').append(a);
+                $('#myForm').attr('action', "employee/update").submit();
+            }
         });
     });
   </script>

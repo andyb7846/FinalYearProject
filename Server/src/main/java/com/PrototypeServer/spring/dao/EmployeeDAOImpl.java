@@ -41,7 +41,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     // Query - Find a employee by specifying an ID.
     public Employee getEmployeeById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Employee p = (Employee) session.load(Employee.class, new Integer(id));
+        Employee p = (Employee) session.get(Employee.class, new Integer(id));
         logger.info("Employee loaded successfully, Employee details="+p);
         return p;
     }

@@ -41,7 +41,7 @@ public class VehicleDAOImpl implements VehicleDAO {
     // Query - Find a vehicle by specifying an ID.
     public Vehicle getVehicleById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Vehicle p = (Vehicle) session.load(Vehicle.class, new Integer(id));
+        Vehicle p = (Vehicle) session.get(Vehicle.class, new Integer(id));
         logger.info("Vehicle loaded successfully, Vehicle details="+p);
         return p;
     }
