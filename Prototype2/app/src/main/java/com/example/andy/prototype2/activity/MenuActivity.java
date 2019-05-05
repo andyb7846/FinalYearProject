@@ -54,14 +54,10 @@ public class MenuActivity extends RootActivity implements View.OnClickListener {
 
         btnAccount = findViewById(R.id.account);
         btnStatics = findViewById(R.id.statistics);
-        btnNews = findViewById(R.id.news);
-        btnHashtag = findViewById(R.id.hashtag);
         btnSettings = findViewById(R.id.settings);
 
         btnAccount.setOnClickListener(this);
         btnStatics.setOnClickListener(this);
-        btnNews.setOnClickListener(this);
-        btnHashtag.setOnClickListener(this);
         btnSettings.setOnClickListener(this);
     }
 
@@ -74,15 +70,7 @@ public class MenuActivity extends RootActivity implements View.OnClickListener {
                 break;
 
             case R.id.statistics:
-                intent = new Intent(getApplicationContext(), StatisticsActivity.class);
-                break;
-
-            case R.id.news:
-                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
-                break;
-
-            case R.id.hashtag:
-                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                intent = new Intent(getApplicationContext(), NewStatisticsActivity.class);
                 break;
 
             case R.id.settings:
