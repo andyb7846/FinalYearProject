@@ -72,7 +72,7 @@ public class WebCompanyController {
     public String add(HttpSession session,
                       @RequestParam(value="user_id") int user_id,
                       @RequestParam(value="name") String name,
-                      @RequestParam(value="yearly_income") int yearly_income,
+                      @RequestParam(value="gross") int gross,
                       Model model) {
 
         if(session.getAttribute("admin") == null){
@@ -90,7 +90,7 @@ public class WebCompanyController {
 
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Company company = new Company(name,
-                    yearly_income,
+                    gross,
                     dateFormat.format(new Date()),
                     user);
 
@@ -109,7 +109,7 @@ public class WebCompanyController {
                          @RequestParam(value="company_id") int company_id,
                          @RequestParam(value="user_id") int user_id,
                          @RequestParam(value="name") String name,
-                         @RequestParam(value="yearly_income") int yearly_income,
+                         @RequestParam(value="gross") int gross,
                          Model model) {
 
         if(session.getAttribute("admin") == null){
@@ -132,7 +132,7 @@ public class WebCompanyController {
 
             company.setName(name);
             company.setUser(user);
-            company.setYearly_income(yearly_income);
+            company.setGross(gross);
             this.companyService.updateCompany(company); //Add the company to the DB
             return "redirect:/web/company";
 

@@ -90,8 +90,11 @@ public class MyCompaniesActivity extends RootActivity implements View.OnClickLis
         Intent intent = new Intent(getApplicationContext(), CompanyDetailsActivity.class);
         intent.putExtra("company_id", companies.get(position).getCompany_id());
         intent.putExtra("company_name", companies.get(position).getName());
-        intent.putExtra("income", companies.get(position).getIncome());
-        intent.putExtra("benefit", companies.get(position).getBenefit());
+        intent.putExtra("gross", companies.get(position).getGross());
+        intent.putExtra("yearly_cost", companies.get(position).getCost());
+        intent.putExtra("yearly_income", companies.get(position).getIncome());
+        intent.putExtra("monthly_cost", companies.get(position).getCost()/12);
+        intent.putExtra("monthly_income", companies.get(position).getIncome()/12);
         startActivity(intent);
     }
 
@@ -122,8 +125,8 @@ public class MyCompaniesActivity extends RootActivity implements View.OnClickLis
                                 jObj.getInt("properties"),
                                 jObj.getInt("devices"),
                                 jObj.getInt("vehicles"),
-                                jObj.getInt("income"),
-                                jObj.getInt("benefit")));
+                                jObj.getInt("gross"),
+                                jObj.getInt("cost")));
                     }
                     /*
                     int id = jObj.getInt("id");

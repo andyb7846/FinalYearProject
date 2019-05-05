@@ -17,7 +17,7 @@ public class Company {
 
     private String name;
 
-    private int yearly_income;
+    private int gross;
 
     private String create_time;
 
@@ -41,9 +41,9 @@ public class Company {
 
     public Company(){}
 
-    public Company(String name, int yearly_income, String create_time, User user){
+    public Company(String name, int gross, String create_time, User user){
         this.name = name;
-        this.yearly_income = yearly_income;
+        this.gross = gross;
         this.create_time = create_time;
         this.user = user;
     }
@@ -64,12 +64,12 @@ public class Company {
         this.name = name;
     }
 
-    public int getYearly_income() {
-        return yearly_income;
+    public int getGross() {
+        return gross;
     }
 
-    public void setYearly_income(int yearly_income) {
-        this.yearly_income = yearly_income;
+    public void setGross(int gross) {
+        this.gross = gross;
     }
 
     public String getCreate_time() {

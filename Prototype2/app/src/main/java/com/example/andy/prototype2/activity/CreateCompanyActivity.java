@@ -44,7 +44,7 @@ public class CreateCompanyActivity extends RootActivity{
         setContentView(R.layout.create_company);
 
         companyName = (EditText) findViewById(R.id.company_name);
-        textIncome = (EditText) findViewById(R.id.text_income);
+        textIncome = (EditText) findViewById(R.id.text_gross);
         btnCreate = (Button) findViewById(R.id.btn_create);
 
         db = new SQLiteHandler(getApplicationContext());
@@ -80,7 +80,7 @@ public class CreateCompanyActivity extends RootActivity{
         });
     }
 
-    private void checkCreate(final String companyName, final String income) {
+    private void checkCreate(final String companyName, final String gross) {
         // Tag used to cancel the request
         String tag_string_req = "req_create_company";
 
@@ -135,7 +135,7 @@ public class CreateCompanyActivity extends RootActivity{
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("company_name", companyName);
-                params.put("income", income);
+                params.put("gross", gross);
 
                 HashMap<String, String> user = db.getUserDetails();
                 String uniqueId = user.get("uid");

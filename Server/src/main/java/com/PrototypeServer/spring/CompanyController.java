@@ -76,7 +76,7 @@ public class CompanyController {
 
     @RequestMapping(value = "/company/create", method = RequestMethod.POST)
     public Object create(@RequestParam(value="company_name") String companyName,
-                         @RequestParam(value="income") int income,
+                         @RequestParam(value="gross") int gross,
                          @RequestParam(value="unique_id") String uniqueId, Model model) {
 
         if(companyName != null && uniqueId != null) {
@@ -87,7 +87,7 @@ public class CompanyController {
             } else {
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 Company company = new Company(companyName,
-                            income,
+                            gross,
                             dateFormat.format(new Date()),
                             user);
 
@@ -158,7 +158,7 @@ public class CompanyController {
                     JSONObject tmp = new JSONObject();
                     tmp.put("company_id", company.getCompany_id());
                     tmp.put("name", company.getName());
-                    tmp.put("income", company.getYearly_income());
+                    tmp.put("gross", company.getGross());
                     /*
                     tmp.put("employees", company.getEmployees().size());
                     tmp.put("properties", company.getProperties().size());
@@ -191,7 +191,7 @@ public class CompanyController {
                         outcome += vehicle.getYearly_cost();
                     }
 
-                    tmp.put("benefit", company.getYearly_income()-outcome);
+                    tmp.put("cost", outcome);
                     
                     ja.put(tmp);
                 }

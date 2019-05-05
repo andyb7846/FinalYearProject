@@ -34,16 +34,10 @@ public class RootActivity extends Activity{
                                 intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
                                 break;
                             case "Statistics":
-                                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
-                                break;
-                            case "News":
-                                intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);
-                                break;
-                            case "Hashtags":
-                                intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);
+                                intent = new Intent(getApplicationContext(), NewStatisticsActivity.class);
                                 break;
                             case "Settings":
-                                intent = new Intent(getApplicationContext(), CreateCompanyActivity.class);
+                                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
                                 break;
                             default:
                         }

@@ -8,18 +8,20 @@ public class Company {
     int properties;
     int vehicles;
     int devices;
+    int gross;
+    int cost;
     int income;
-    int benefit;
 
-    public Company(int company_id, String name, int employees, int properties, int devices, int vehicles, int income, int benefit) {
+    public Company(int company_id, String name, int employees, int properties, int devices, int vehicles, int gross, int cost) {
         this.company_id = company_id;
         this.name = name;
         this.employees = employees;
         this.properties = properties;
         this.vehicles = vehicles;
         this.devices = devices;
-        this.income = income;
-        this.benefit = benefit;
+        this.gross = gross;
+        this.cost = cost;
+        this.income = gross - cost;
     }
 
     public int getCompany_id() {
@@ -70,19 +72,27 @@ public class Company {
         this.devices = devices;
     }
 
+    public int getGross() {
+        return gross;
+    }
+
+    public void setGross(int gross) {
+        this.gross = gross;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
     public int getIncome() {
         return income;
     }
 
     public void setIncome(int income) {
         this.income = income;
-    }
-
-    public int getBenefit() {
-        return benefit;
-    }
-
-    public void setBenefit(int benefit) {
-        this.benefit = benefit;
     }
 }

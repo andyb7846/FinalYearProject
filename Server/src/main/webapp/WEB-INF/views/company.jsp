@@ -197,7 +197,7 @@
                                           <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Enter Name...">
                                         </div>
                                         <div class="form-group">
-                                          <input type="text" class="form-control form-control-user" id="yearly_income" name="yearly_income" placeholder="Enter Yearly Income...">
+                                          <input type="text" class="form-control form-control-user" id="gross" name="gross" placeholder="Enter Gross...">
                                         </div>
 
                                       </form>
@@ -223,7 +223,7 @@
                       <th>Company id</th>
                       <th>User id</th>
                       <th>Name</th>
-                      <th>Yearly income</th>
+                      <th>Gross</th>
                       <th>Create time</th>
                     </tr>
                   </thead>
@@ -232,7 +232,7 @@
                       <th>Company id</th>
                       <th>User id</th>
                       <th>Name</th>
-                      <th>Yearly income</th>
+                      <th>Gross</th>
                       <th>Create time</th>
                     </tr>
                   </tfoot>
@@ -242,7 +242,7 @@
                       <td>${company.company_id}</td>
                       <td>${company.user.user_id}</td>
                       <td>${company.name}</td>
-                      <td>${company.yearly_income}</td>
+                      <td>${company.gross}</td>
                       <td>${company.create_time}</td>
                     </tr>
                     </c:forEach>
@@ -321,7 +321,7 @@
   var company_id = "";
   var user_id = "";
   var name = "";
-  var yearly_income = "";
+  var gross = "";
 
 	  $(document).ready(function() {
 	  var table = $('#dataTable').DataTable();
@@ -333,7 +333,7 @@
 				company_id = ""
                 user_id = "";
                 name = "";
-                yearly_income = "";
+                gross = "";
 			}
 			else {
 				table.$('tr.selected').removeClass('selected');
@@ -341,7 +341,7 @@
 				company_id = $(this).find("td:nth-child(1)").text();
 				user_id = $(this).find("td:nth-child(2)").text();
 				name = $(this).find("td:nth-child(3)").text();
-				yearly_income = $(this).find("td:nth-child(4)").text();
+				gross = $(this).find("td:nth-child(4)").text();
 			}
 		} );
 
@@ -356,7 +356,7 @@
 		    $("#modal_add").prop('value', 'Update');
             $('#user_id').val(user_id);
             $('#name').val(name);
-            $('#yearly_income').val(yearly_income);
+            $('#gross').val(gross);
         });
 
         $('#add').click(function(){
@@ -365,7 +365,7 @@
 		   $("#modal_add").prop('value', 'Add');
            $('#user_id').val("");
            $('#name').val("");
-           $('#yearly_income').val("");
+           $('#gross').val("");
         });
 
         $('#myModal').on('show.bs.modal', function (e) {

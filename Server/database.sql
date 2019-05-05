@@ -32,7 +32,7 @@ CREATE TABLE Company(
  company_id				INT				NOT NULL AUTO_INCREMENT COMMENT 'company id',
  user_id				INT 	 								COMMENT 'reference of Admin.admin_id',
  name					VARCHAR(255)	NOT NULL 				COMMENT 'company name',
- yearly_income			INT  	 								COMMENT 'yearly income',
+ gross					INT  	 								COMMENT 'gross',
  create_time 			DATETIME 		NOT NULL 				COMMENT 'create time',
  update_time 			DATETIME 								COMMENT 'update time',
  PRIMARY KEY(company_id),

@@ -31,7 +31,7 @@ import static com.example.andy.prototype2.app.AppController.TAG;
 public class CompanyDetailsActivity extends RootActivity implements View.OnClickListener{
 
     private SQLiteHandler db;
-    private TextView textCompanyName, textIncome, textBenefit;
+    private TextView textCompanyName, textGross, textYearlyIncome, textYearlyCost, textMonthlyIncome, textMonthlyCost;
     private Button btnUsername, btnEmployees, btnProperties, btnDevices, btnVehicles, btnDelete;
     private int companyId;
     private ProgressDialog pDialog;
@@ -50,8 +50,11 @@ public class CompanyDetailsActivity extends RootActivity implements View.OnClick
         btnUsername.setText(strUsername);
 
         textCompanyName = findViewById(R.id.text_company_name);
-        textIncome = findViewById(R.id.text_income);
-        textBenefit = findViewById(R.id.text_benefit);
+        textGross = findViewById(R.id.text_gross);
+        textYearlyIncome = findViewById(R.id.text_yearly_income);
+        textYearlyCost = findViewById(R.id.text_yearly_cost);
+        textMonthlyIncome = findViewById(R.id.text_monthly_income);
+        textMonthlyCost = findViewById(R.id.text_monthly_cost);
 
         btnEmployees = findViewById(R.id.btn_employees);
         btnProperties = findViewById(R.id.btn_properties);
@@ -67,8 +70,11 @@ public class CompanyDetailsActivity extends RootActivity implements View.OnClick
 
         companyId = getIntent().getIntExtra("company_id", 0);
         textCompanyName.setText(getIntent().getStringExtra("company_name"));
-        textIncome.append("" + getIntent().getIntExtra("income", 0));
-        textBenefit.append("" + getIntent().getIntExtra("benefit", 0));
+        textGross.append("" + getIntent().getIntExtra("gross", 0));
+        textYearlyIncome.append("" + getIntent().getIntExtra("yearly_income", 0));
+        textYearlyCost.append("" + getIntent().getIntExtra("yearly_cost", 0));
+        textMonthlyIncome.append("" + getIntent().getIntExtra("monthly_income", 0));
+        textMonthlyCost.append("" + getIntent().getIntExtra("monthly_cost", 0));
 
         // Progress dialog
         pDialog = new ProgressDialog(this);

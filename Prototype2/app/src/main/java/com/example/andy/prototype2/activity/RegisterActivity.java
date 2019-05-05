@@ -34,6 +34,7 @@ public class RegisterActivity extends Activity {
     private Button btnLogin;
     private EditText username;
     private EditText password;
+    private EditText verify_password;
     private EditText verifyPassword;
     private EditText email;
     private ProgressDialog pDialog;
@@ -47,6 +48,8 @@ public class RegisterActivity extends Activity {
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
+        verify_password = (EditText) findViewById(R.id.verify_password);
+
         email = (EditText) findViewById(R.id.text_email);
         btnRegister = (Button) findViewById(R.id.btn_register);
         btnLogin = (Button) findViewById(R.id.btn_login);
@@ -75,10 +78,18 @@ public class RegisterActivity extends Activity {
             public void onClick(View view) {
                 String strUsername = username.getText().toString().trim();
                 String strPassword = password.getText().toString().trim();
+                String strVerifyPassword = verify_password.getText().toString().trim();
                 String strEmail = email.getText().toString().trim();
 
-                if (!strUsername.isEmpty() && !strPassword.isEmpty() && !strEmail.isEmpty()) {
-                    registerUser(strUsername, strPassword, strEmail);
+                if (!strUsername.isEmpty() && !strPassword.isEmpty() && !strEmail.isEmpty() && !strVerifyPassword.isEmpty()) {
+                    if(strPassword.equals(strVerifyPassword)){
+                        registerUser(strUsername, strPassword, strEmail);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),
+                                "Password not the same", Toast.LENGTH_LONG)
+                                .show();
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(),
                             "Please enter your details!", Toast.LENGTH_LONG)
