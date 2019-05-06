@@ -53,5 +53,8 @@ public class AppConfig {
     public static String URL_UPDATE_VEHICLE = "https://10.0.2.2:8443/SpringMVCHibernate/vehicle/update";
 
     public static String URL_REQUIRE_VEHICLES = "https://10.0.2.2:8443/SpringMVCHibernate/vehicle/require";
+
+    //Statistics
+    public static String URL_REQUIRE_STATISTICS = "https://10.0.2.2:8443/SpringMVCHibernate/statistics/require";
 }
 

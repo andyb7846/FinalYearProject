@@ -81,10 +81,19 @@
             android:name=".activity.ForgetPassActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".activity.StatisticsActivity"
+            android:name=".activity.StatisticsMainActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".activity.NewStatisticsActivity"
+            android:name=".activity.EmployeeStatisticsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.PropertyStatisticsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.DeviceStatisticsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.VehicleStatisticsActivity"
             android:launchMode="singleTop" />
     </application>
 </manifest>

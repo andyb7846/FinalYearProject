@@ -70,7 +70,7 @@ public class MenuActivity extends RootActivity implements View.OnClickListener {
                 break;
 
             case R.id.statistics:
-                intent = new Intent(getApplicationContext(), NewStatisticsActivity.class);
+                intent = new Intent(getApplicationContext(), StatisticsMainActivity.class);
                 break;
 
             case R.id.settings:

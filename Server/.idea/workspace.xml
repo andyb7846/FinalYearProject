@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26038fca-a306-433a-bc06-47ed4f5ae109" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CompanyDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CompanyDetailsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CreateCompanyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/CreateCompanyActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/MyCompaniesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/MyCompaniesActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/RegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/RootActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/RootActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/model/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/company_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/company_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/create_company.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/res/layout/create_company.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/res/menu/popup_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/res/menu/popup_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prototype2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/NewStatisticsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/activity/NewStatisticsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/app/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Prototype2/app/src/main/java/com/example/andy/prototype2/app/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/model/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebCompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/CompanyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/model/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/web/WebCompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/classes/com/PrototypeServer/spring/web/WebCompanyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/company.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernate/WEB-INF/views/company.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/CompanyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/model/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/web/WebCompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/PrototypeServer/spring/web/WebCompanyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,36 +18,37 @@
     <session id="211652701">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="25" />
+          <entry key="java" value="27" />
           <entry key="jsp" value="2" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="25" />
+          <entry key="JAVA" value="27" />
           <entry key="JSP" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="26" />
           <entry key="jsp" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="26" />
           <entry key="JSP" value="5" />
         </counts>
       </usages-collector>
@@ -75,25 +56,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebCompanyController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/StatisticsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2109">
-              <caret line="134" column="36" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="36" />
+            <state relative-caret-position="508">
+              <caret line="81" column="67" lean-forward="true" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4465">
-              <caret line="235" column="2" selection-start-line="235" selection-start-column="2" selection-end-line="235" selection-end-column="2" />
+            <state relative-caret-position="285">
+              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -127,6 +118,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebCompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/StatisticsController.java" />
       </list>
     </option>
   </component>
@@ -158,6 +150,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,15 +185,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMVCHibernate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpringMVCHibernate" type="b2602c69:ProjectViewProjectNode" />
@@ -247,13 +233,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557086248813" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557166982079" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -284,7 +267,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25586355" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2585288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -302,7 +285,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="1" visible="true" weight="0.32942432" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.32942432" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -375,9 +358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -420,41 +400,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
           <caret line="66" column="27" lean-forward="true" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1520#1521#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1587#1588#0" expanded="true" />
-            <element signature="e#1619#1620#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
-            <element signature="e#1731#1732#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="193" column="45" lean-forward="true" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/web/WebCompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2109">
+        <state relative-caret-position="1344">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/company.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4465">
+        <state relative-caret-position="1426">
           <caret line="235" column="2" selection-start-line="235" selection-start-column="2" selection-end-line="235" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/CompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/PrototypeServer/spring/StatisticsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="81" column="67" lean-forward="true" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

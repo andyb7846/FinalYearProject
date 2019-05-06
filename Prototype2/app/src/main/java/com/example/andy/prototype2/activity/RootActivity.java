@@ -34,7 +34,7 @@ public class RootActivity extends Activity{
                                 intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
                                 break;
                             case "Statistics":
-                                intent = new Intent(getApplicationContext(), NewStatisticsActivity.class);
+                                intent = new Intent(getApplicationContext(), StatisticsMainActivity.class);
                                 break;
                             case "Settings":
                                 intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
