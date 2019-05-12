@@ -74,7 +74,7 @@ public class MenuActivity extends RootActivity implements View.OnClickListener {
                 break;
 
             case R.id.settings:
-                intent = new Intent(getApplicationContext(), MyCompaniesActivity.class);
+                intent = new Intent(getApplicationContext(), SettingActivity.class);
                 break;
             default:
                 return;

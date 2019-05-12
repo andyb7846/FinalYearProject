@@ -95,5 +95,8 @@
         <activity
             android:name=".activity.VehicleStatisticsActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

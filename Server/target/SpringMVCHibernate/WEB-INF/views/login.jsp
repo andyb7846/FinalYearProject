@@ -18,9 +18,14 @@
   <!-- Custom styles for this template-->
   <link href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <style>
+	body {
+	  background-color: #F7CA18;
+	}
+  </style>
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
   <div class="container">
 
